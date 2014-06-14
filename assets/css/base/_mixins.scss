@@ -23,6 +23,29 @@
 
 /* Font settings
 -------------------------------------------------------------------*/
+/* Font-face
+------------------------------------------*/
+@mixin font($url, $name){
+  @font-face {
+    font-family: #{$name};
+    src:url("#{$url}#{$name}.eot?") format("eot"),
+        url("#{$url}#{$name}.woff") format("woff"),
+        url("#{$url}#{$name}.svg##{$name}") format("svg"),
+        url("#{$url}#{$name}.ttf") format("truetype");
+  }
+}
+
+/* regular font management
+----------------------------------------------------------------------*/
+@mixin font-family($font, $fallback, $serif){
+  font-family: $font, $fallback, $serif;
+}
+@mixin selected-family(){
+  @include font-family($font-name, $font-fallback, serif);
+}
+
+
+
 @mixin header-weight($value){
   @for $i from 1 through 6 {
     h#{$i}{
@@ -65,16 +88,6 @@
 @mixin border-not-right($size, $type, $color) {
   border:$size+px $type $color;
   border-right: none;
-}
-
-
-/* Font
------------------------------------------------------------------*/
-@mixin font-family($font, $fallback, $serif){
-  font-family: $font, $fallback, $serif;
-}
-@mixin selected-family(){
-  @include font-family($font-name, $font-fallback, serif);
 }
 
 /* borders

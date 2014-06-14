@@ -160,6 +160,8 @@ OVCSS Settings library :
 /*
  Variables functions :
 */
+/* font var
+-----------------------------------------------------*/
 /*
   Mixins EfficaCSS.
 */
@@ -167,12 +169,14 @@ OVCSS Settings library :
 -------------------------------------------------------------------*/
 /* Font settings
 -------------------------------------------------------------------*/
+/* Font-face
+------------------------------------------*/
+/* regular font management
+----------------------------------------------------------------------*/
 /* Helper : Border-radius
 -------------------------------------------------------------------*/
 /* Helper : Borders
 -------------------------------------------------------------------*/
-/* Font
------------------------------------------------------------------*/
 /* borders
 -----------------------------------------------------------------*/
 /* single element
@@ -2083,8 +2087,10 @@ p {
     .container .col-md-12 section ul li section {
       background: #0d638f;
       width: calc(100% - 1.4em); }
+      .container .col-md-12 section ul li section h3 {
+        margin-top: 2em; }
       .container .col-md-12 section ul li section h2 {
-        font-size: 1.4em;
+        font-size: 2.4em;
         color: #eebd2b; }
   .container .col-md-12.download section {
     padding-top: 2em; }

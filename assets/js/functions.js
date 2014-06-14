@@ -35,10 +35,29 @@ $(document).ready(function(){
     });
 
 
+function showCategories(){
+  var env = $('.container .col-md-12 ');
+  var targetLi = env.find('ul li[class*="section-"]');
+  var button = env.find('.nav-pills li a');
+  targetLi.fadeOut(0);
+  button.on('click', function(e){
+    e.preventDefault();
+
+    var $this = $(this);
+    var $name = $this.data('target');
+    var $targ = targetLi.hasClass($name);
+    $targ.fadeIn()
+
+    console.log($name)
+  });
+}
+
 
 
   function deploy(){
-    log.msg("Welcome on EfficaCSS, the powerful OCSS Framework.")
+    log.msg("Welcome on EfficaCSS, the powerful OCSS Framework.");
+
+    showCategories();
   }
 
 

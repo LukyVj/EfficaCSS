@@ -77,13 +77,13 @@
           <article>
             <ul class="nav nav-pills">
             <li>
-              <a href="#">Paths</a>
+              <a href="#" data-target="path">Paths</a>
             </li>
             <li>
-              <a href="#">Fonts</a>
+              <a href="#" data-target="fonts">Fonts</a>
             </li>
             <li>
-              <a href="#">Colors</a>
+              <a href="#" data-target="colors">Colors</a>
             </li>
             </ul>
 
@@ -92,7 +92,7 @@
             </section>
 
             <ul>
-              <li>
+              <li class="section-path">
                 <section>
                   <header>
                     <h2>Path</h2>
@@ -102,32 +102,91 @@
                     <p>Keep this file at the top of your sass file, to make the path variable accessible to any OVCSS components.</p>
                     <h3>Keep everything clean</h3>
                     <p>To easily track your files and ressources, you can custom your own path like the following :</p>
-                    <pre class="bulltax"><code class="css">$root: '../';
+                    <pre><code>$root: '../';
 
 $path-css: $root + 'css/\';
 $path-js: $root + 'js/';
 $path-fonts: $root + 'fonts/';
 $path-img: $root + 'images/';</code></pre>
+
+                    <h3>Usecase</h3>
+                    <p>Let's say you have your own icons set, and you put them in you <code>images</code> path, into a <code>svg</code> folder.</p>
+                    <p><strong>1</strong> Add a new variable to <code>_variables.scss</code></p>
+                    <pre><code>$path-svg: $path-image + 'svg/'</code></pre>
+
+                    <p><strong>2</strong> Add an @each function to your <code>_icons.scss</code></p>
+                    <pre><code>$icons: "phone", "twitter", "email";
+
+@each $icon in $icons {
+  .ico{
+    &[class*="ico-#{($icon)}"]{
+      &:before{
+        @include icon-background('#{$path-svg}#{($icon)}.svg');
+      }
+    }
+  }
+}</code></pre>
                   </article>
                 </section>
               </li>
-               <li>
+               <li class="section-fonts">
                 <section>
                    <header>
                     <h2>Fonts</h2>
                   </header>
                   <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>The framework use a smart font system, that requires a minimum setting. on the same <code>_variables.scss</code>, you can set <strong>3</strong> different parameters.</p>
+                    <pre><code>$font-name: "ProximaNova";
+$font-fallback: "Helvetica";
+
+$font-directory: $path-fonts + "ProximaNova/";
+</code></pre>
                   </article>
                 </section>
               </li>
-               <li>
+               <li class="section-colors">
                 <section>
                    <header>
                     <h2>Colors</h2>
                   </header>
                    <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>To keep the whole design easy to maintain, EfficaCSS use colors variables, and shorten colors variables.<br/>
+                    Here is a sample of the <code>_color.scss</code> file this page is using.</p>
+                    <pre><code>$purple: #663399;
+$text-purple: #4B5184;
+$dark-purple: #363953;
+$light-purple: #C8C9DA;
+
+$grey: #EFF0F2;
+$light-grey: #FAFBFB;
+$dark-grey: #9295A4;
+
+$blue: #1393D5;
+$white: #F3F3F5;
+$yellow: #EEBD2B;
+$green: #83BC49;
+
+/* Shortcuts
+--------------------------------------------------------------------------------------------------*/
+$p: $purple;
+$dp: $dark-purple;
+$lp: $light-purple;
+$tp: $text-purple;
+
+$ge: $grey;
+$lg: $light-grey;
+$dg: $dark-grey;
+
+$b: $blue;
+$w: $white;
+$y: $yellow;
+$g: $green;
+
+/* Theme
+--------------------------------------------------------------------------------------------------*/
+$color-theme: $b;
+$ct: $color-theme;
+</code></pre>
                   </article>
                 </section>
               </li>

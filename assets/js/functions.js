@@ -39,14 +39,13 @@ function showCategories(){
   var env = $('.container .col-md-12 ');
   var targetLi = env.find('ul li[class*="section-"]');
   var button = env.find('.nav-pills li a');
-  targetLi.fadeOut(0);
   button.on('click', function(e){
     e.preventDefault();
 
     var $this = $(this);
     var $name = $this.data('target');
     var $targ = targetLi.hasClass($name);
-    $targ.fadeIn()
+    targetLi.hasClass($name).fadeIn();
 
     console.log($name)
   });

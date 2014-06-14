@@ -2198,7 +2198,8 @@ p {
   height: 100px;
   border-radius: 6px;
   width: 48%;
-  margin-right: 2%; }
+  margin-right: 2%;
+  margin-top: 2em; }
   .container .col-md-6 a {
     line-height: 100px;
     color: #094260;

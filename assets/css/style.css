@@ -160,7 +160,12 @@ OVCSS Settings library :
 /*
  Variables functions :
 */
- /* Start mixins, reset ect
+/*
+  Mixins EfficaCSS.
+*/
+/* Start mixins, reset ect
+-------------------------------------------------------------------*/
+/* Font settings
 -------------------------------------------------------------------*/
 /* Helper : Border-radius
 -------------------------------------------------------------------*/
@@ -178,6 +183,10 @@ OVCSS Settings library :
 ------------------------------------------------------------------*/
 /* Shadow effects
 -------------------------------------------------------------------*/
+/* Inset outset blocks
+--------------------------------------------------------------------*/
+/* Text-shadows [ b = bottom, t = top, r = right, l = left ]
+---------------------------------------------------------------------*/
 /* Helper & debug mixins
 ----------------------------------------------------------------*/
 /* Grid
@@ -1726,9 +1735,9 @@ Classes : This library could be named helpers.css, here you will find all techni
 /* incetions
 --------------------------------------------------------------------------*/
 section.inset, .container .col-md-12 section article > section {
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(0, 0, 0, 0.3); }
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.4); }
   section.inset:hover, .container .col-md-12 section article > section:hover {
-    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(0, 0, 0, 0.3); }
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.4); }
 
  /* ====================================================================================================
 Basic form stylesheet : Here you define the basic style of your forms
@@ -1751,14 +1760,26 @@ Animations : Define CSS3 keyframes animations
   0% {
     text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
 
+  12.5% {
+    text-shadow: -0.035em -0.035em 0 #0f73a6, -0.065em -0.065em 0 #0b5277; }
+
   25% {
     text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  37.5% {
+    text-shadow: 0.035em -0.035em 0 #0f73a6, 0.065em -0.065em 0 #0b5277; }
 
   50% {
     text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
 
+  62.5 {
+    text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 #0b5277; }
+
   75% {
     text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  87.5% {
+    text-shadow: -0.035em 0.035em 0 #0f73a6, -0.065em 0.065em 0 #0b5277; }
 
   100% {
     text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
@@ -1766,14 +1787,26 @@ Animations : Define CSS3 keyframes animations
   0% {
     text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
 
+  12.5% {
+    text-shadow: -0.035em -0.035em 0 #0f73a6, -0.065em -0.065em 0 #0b5277; }
+
   25% {
     text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  37.5% {
+    text-shadow: 0.035em -0.035em 0 #0f73a6, 0.065em -0.065em 0 #0b5277; }
 
   50% {
     text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
 
+  62.5 {
+    text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 #0b5277; }
+
   75% {
     text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  87.5% {
+    text-shadow: -0.035em 0.035em 0 #0f73a6, -0.065em 0.065em 0 #0b5277; }
 
   100% {
     text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
@@ -1781,14 +1814,26 @@ Animations : Define CSS3 keyframes animations
   0% {
     text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
 
+  12.5% {
+    text-shadow: -0.035em -0.035em 0 #0f73a6, -0.065em -0.065em 0 #0b5277; }
+
   25% {
     text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  37.5% {
+    text-shadow: 0.035em -0.035em 0 #0f73a6, 0.065em -0.065em 0 #0b5277; }
 
   50% {
     text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
 
+  62.5 {
+    text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 #0b5277; }
+
   75% {
     text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  87.5% {
+    text-shadow: -0.035em 0.035em 0 #0f73a6, -0.065em 0.065em 0 #0b5277; }
 
   100% {
     text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
@@ -1801,7 +1846,7 @@ Base : This stylesheet will be your base, you will define the main lines of your
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 24px; }
 
 html, body {
@@ -1810,14 +1855,14 @@ html, body {
   margin: 0;
   padding: 0;
   float: left;
-  font-family: ProximaNova-light, "Comic sans ms", sans-serif; }
+  font-family: ProximaNova-light, "Helvetica", sans-serif; }
 
 html {
   font-size: 29.1rem;
   overflow-x: hidden; }
 
 strong {
-  font-family: ProximaNova-semibold, "Comic sans ms", sans-serif;
+  font-family: ProximaNova-semibold, "Helvetica", sans-serif;
   font-weight: bold; }
 
  /*
@@ -1906,6 +1951,27 @@ body {
   background: #1393d5;
   color: #f3f3f5; }
 
+pre,
+code {
+  background: #1393d5;
+  color: #eebd2b;
+  text-shadow: 0 1px 0 #af870e;
+  border: 1px solid #0b5981;
+  padding-bottom: .3em;
+  padding-left: .4em;
+  padding-right: .4em; }
+
+pre {
+  background: #0b5981;
+  border: 1px solid #094565; }
+  pre code {
+    border: 0;
+    text-shadow: 0 0 0;
+    background: transparent; }
+
+p {
+  font-size: 1.2em; }
+
 /* Jumbotron
 -----------------------------------------------------------------------*/
 .jumbotron {
@@ -1921,9 +1987,7 @@ body {
     font-size: 4em;
     vertical-align: middle;
     margin-top: 0em;
-    -webkit-animation: rollShadow 2s ease infinite;
-    -moz-animation: rollShadow 2s ease infinite;
-    animation: rollShadow 2s ease infinite; }
+    text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 rgba(11, 82, 119, 0.8); }
   .jumbotron h3 {
     vertical-align: middle;
     padding-top: 0;
@@ -1931,7 +1995,7 @@ body {
   .jumbotron .btn.call-to-action {
     margin: 5em auto;
     width: 310px;
-    font-family: ProximaNova-bold, "Comic sans ms", sans-serif;
+    font-family: ProximaNova-bold, "Helvetica", sans-serif;
     font-size: 1em; }
   .jumbotron .anchor-down {
     color: #f3f3f5;
@@ -1948,6 +2012,18 @@ body {
 
 /* Container
 ------------------------------------------------------------------*/
+.container h1 {
+  font-weight: bold; }
+.container h2 {
+  font-weight: bold; }
+.container h3 {
+  font-weight: bold; }
+.container h4 {
+  font-weight: bold; }
+.container h5 {
+  font-weight: bold; }
+.container h6 {
+  font-weight: bold; }
 .container .col-md-12 {
   /* Summary tab
   -----------------------------------------------------------------------------*/

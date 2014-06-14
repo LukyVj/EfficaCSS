@@ -101,7 +101,13 @@
                     <p>To make the maintenance easy, you can declare your assets path in a separate <code>.scss</code> file, called <code>_variables.scss</code></p>
                     <p>Keep this file at the top of your sass file, to make the path variable accessible to any OVCSS components.</p>
                     <h3>Keep everything clean</h3>
-                    <p></p>
+                    <p>To easily track your files and ressources, you can custom your own path like the following :</p>
+                    <pre class="bulltax"><code class="css">$root: '../';
+
+$path-css: $root + 'css/\';
+$path-js: $root + 'js/';
+$path-fonts: $root + 'fonts/';
+$path-img: $root + 'images/';</code></pre>
                   </article>
                 </section>
               </li>
@@ -299,9 +305,10 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/retina.min.js"></script>
     <script src="assets/js/functions.js"></script>
+    <script src="assets/js/bulltax/bulltax.js"></script>
 
 
-   <script src="assets/js/debug.js" id="debugger"></script>
+<!--   <script src="assets/js/debug.js" id="debugger"></script> -->
 
     <script>
    </script>

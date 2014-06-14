@@ -8,18 +8,31 @@ Animations : Define CSS3 keyframes animations
   0%{
     @include shadow-text-l(darken($p, 10%), darken($ct, 20%));
   }
+
+  12.5%{
+    @include shadow-text-tl(darken($p, 10%), darken($ct, 20%));
+  }
+
   25%{
     @include shadow-text-t(darken($p, 10%), darken($ct, 20%));
-
   }
+
+  37.5%{
+    @include shadow-text-tr(darken($p, 10%), darken($ct, 20%));
+  }
+
   50%{
     @include shadow-text-r(darken($p, 10%), darken($ct, 20%));
   }
-
+  62.5{
+    @include shadow-text-br(darken($p, 10%), darken($ct, 20%));
+  }
   75%{
     @include shadow-text-b(darken($p, 10%), darken($ct, 20%));
   }
-
+  87.5%{
+    @include shadow-text-bl(darken($p, 10%), darken($ct, 20%));
+  }
   100%{
     @include shadow-text-l(darken($p, 10%), darken($ct, 20%));
   }

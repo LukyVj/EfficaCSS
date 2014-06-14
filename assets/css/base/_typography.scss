@@ -2,12 +2,12 @@
  OVCSS Typographic settings :
  ========================================================================== */
 $font-name: "ProximaNova";
-$font-fallback: "Comic sans ms";
+$font-fallback: "Helvetica";
 
 
 // Set your font name
-$font-path: "../fonts/ProximaNova/";
-$font-directory: $font-path + $font-name;
+$typo-path: $path-fonts + "ProximaNova/";
+$font-directory: $typo-path + $font-name;
 
 @font-face {
     font-family: #{$font-name}-Regular;

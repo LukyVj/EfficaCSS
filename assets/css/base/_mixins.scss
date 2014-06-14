@@ -1,0 +1,124 @@
+ /* Start mixins, reset ect
+-------------------------------------------------------------------*/
+@mixin reset {
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  float:left;
+}
+
+@mixin high{
+  @include box-sizing(border-box);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight:$base-font-weight;
+  line-height:$base-line-height;
+}
+
+/* Helper : Border-radius
+-------------------------------------------------------------------*/
+@mixin border-top-radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+/* Helper : Borders
+-------------------------------------------------------------------*/
+@mixin border-not-top($size, $type, $color) {
+  border: $size+px $type $color;
+  border-top: none;
+}
+@mixin border-not-bottom($size, $type, $color) {
+  border: $size+px $type $color;
+  border-bottom: none;
+}
+@mixin border-not-left($size, $type, $color) {
+  border: $size+px $type $color;
+  border-left: none;
+}
+@mixin border-not-right($size, $type, $color) {
+  border:$size+px $type $color;
+  border-right: none;
+}
+
+
+/* Font
+-----------------------------------------------------------------*/
+@mixin font-family($font, $fallback, $serif){
+  font-family: $font, $fallback, $serif;
+}
+@mixin selected-family(){
+  @include font-family($font-name, $font-fallback, serif);
+}
+
+/* borders
+-----------------------------------------------------------------*/
+@mixin border-not($size, $color, $type, $not){
+  border: $size $color $type;
+  border-#{$not}: none;
+}
+/* single element
+-----------------------------------------------------------------*/
+@mixin single-element(){
+  content:'';
+  display: block;
+  position: absolute;
+}
+
+/* Square
+------------------------------------------------------------------*/
+@mixin square($size){
+  width: $size;
+  height: $size;
+}
+
+/* Backgrounds
+------------------------------------------------------------------*/
+@mixin full-background($fallback-color, $url){
+  background: $fallback-color url($url)no-repeat center center;
+  background-size:cover;
+}
+@mixin contain-background($fallback-color, $url){
+  background: $fallback-color url($url)no-repeat center center;
+  background-size:65%;
+}
+@mixin icon-background($url){
+  background:url($url)no-repeat center center;
+  background-size:contain;
+}
+
+
+/* Shadow effects
+-------------------------------------------------------------------*/
+@mixin inset-shadow($size-1,$color-1,$size-2,$color-2){
+  box-shadow: inset 0 -#{$size-1} 0 rgba($color-1, .2), inset 0 $size-2 0 rgba($color-2, .3);
+}
+@mixin outset-shadow($size-1,$color-1,$size-2,$color-2){
+  box-shadow: inset 0 $size-1 0 rgba($color-1, .2), inset 0 -#{$size-2} 0 rgba($color-2, .3);
+}
+
+/* Helper & debug mixins
+----------------------------------------------------------------*/
+
+/* Grid
+---------------------------------------------------------------*/
+@mixin simpleGrid($size-y,$size-x, $colorGrid, $bgColor) {
+background:
+linear-gradient(180deg, transparent 0px, rgba($colorGrid, .5)  1px, transparent 0px),
+linear-gradient(90deg, transparent 0px, rgba($colorGrid, .5) 1px, transparent 0px);
+
+background-size: $size-x $size-x, $size-y $size-y;
+background-color: $bgColor;
+}

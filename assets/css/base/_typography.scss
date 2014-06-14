@@ -1,0 +1,53 @@
+/* ==========================================================================
+ OVCSS Typographic settings :
+ ========================================================================== */
+$font-name: "ProximaNova";
+$font-fallback: "Comic sans ms";
+
+
+// Set your font name
+$font-path: "../fonts/ProximaNova/";
+$font-directory: $font-path + $font-name;
+
+@font-face {
+    font-family: #{$font-name}-Regular;
+    src:url("#{$font-directory}-Regular.eot?") format("eot"),
+        url("#{$font-directory}-Regular.woff") format("woff"),
+        url("#{$font-directory}-Regular.svg##{$font-name}-Regular") format("svg"),
+        url("#{$font-directory}-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: #{$font-name}-Light;
+    src:url("#{$font-directory}-Light.eot?") format("eot"),
+        url("#{$font-directory}-Light.woff") format("woff"),
+        url("#{$font-directory}-Light.svg##{$font-name}-Light") format("svg"),
+        url("#{$font-directory}-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: #{$font-name}-Bold;
+    src:url("#{$font-directory}-Bold.eot?") format("eot"),
+        url("#{$font-directory}-Bold.woff") format("woff"),
+        url("#{$font-directory}-Bold.svg##{$font-name}-Bold") format("svg"),
+        url("#{$font-directory}-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: #{$font-name}-Semibold;
+    src:url("#{$font-directory}-Semibold.eot?") format("eot"),
+        url("#{$font-directory}-Semibold.woff") format("woff"),
+        url("#{$font-directory}-Semibold.svg##{$font-name}-Semibold") format("svg"),
+        url("#{$font-directory}-Semibold.ttf") format("truetype");
+}
+
+
+/* Typographic media queries */
+@media all and (max-width: 40em) {
+    html, body {
+        line-height: 22px;
+    }
+}
+
+@media all and (max-width: 60em) {
+    html, body {
+        line-height: 24px;
+    }
+}

@@ -1747,6 +1747,51 @@ form input {
 /* ====================================================================================================
 Animations : Define CSS3 keyframes animations
 ======================================================================================================*/
+@-webkit-keyframes rollShadow {
+  0% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
+
+  25% {
+    text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  50% {
+    text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
+
+  75% {
+    text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  100% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
+@-moz-keyframes rollShadow {
+  0% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
+
+  25% {
+    text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  50% {
+    text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
+
+  75% {
+    text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  100% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
+@keyframes rollShadow {
+  0% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
+
+  25% {
+    text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  50% {
+    text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
+
+  75% {
+    text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  100% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
 /* ====================================================================================================
 Base : This stylesheet will be your base, you will define the main lines of your project stylesheet.
 ======================================================================================================*/
@@ -1875,7 +1920,10 @@ body {
   .jumbotron h1 {
     font-size: 4em;
     vertical-align: middle;
-    margin-top: 0em; }
+    margin-top: 0em;
+    -webkit-animation: rollShadow 2s ease infinite;
+    -moz-animation: rollShadow 2s ease infinite;
+    animation: rollShadow 2s ease infinite; }
   .jumbotron h3 {
     vertical-align: middle;
     padding-top: 0;

@@ -4,3 +4,23 @@ Animations : Define CSS3 keyframes animations
 
 
 
+@include keyframes(rollShadow){
+  0%{
+    @include shadow-text-l(darken($p, 10%), darken($ct, 20%));
+  }
+  25%{
+    @include shadow-text-t(darken($p, 10%), darken($ct, 20%));
+
+  }
+  50%{
+    @include shadow-text-r(darken($p, 10%), darken($ct, 20%));
+  }
+
+  75%{
+    @include shadow-text-b(darken($p, 10%), darken($ct, 20%));
+  }
+
+  100%{
+    @include shadow-text-l(darken($p, 10%), darken($ct, 20%));
+  }
+}

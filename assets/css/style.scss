@@ -27,6 +27,8 @@ body {
     font-size: 4em;
     vertical-align: middle;
     margin-top: 0em;
+    @include animation(rollShadow 2s ease infinite);
+
 
   }
   h3{

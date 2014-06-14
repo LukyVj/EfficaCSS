@@ -13,7 +13,35 @@
     width: 100%;
   }
 }
+/* Navbar
+------------------------------------------------------------------*/
+.navbar{
+  background: transparent;
+  border: 0;
+  ul{
+    padding-top: 1em;
+    float: right;
+    li{
+      background: transparent;
+      a{
+        background: transparent;
+        color: $y;
+      }
 
+      &.active{
+           font-weight: bold;
+        &:hover{
+          a{background: $y;}
+        }
+        a{
+           background: transparent;
+           color: $y;
+           border: 1px solid $y;
+        }
+      }
+    }
+  }
+}
 /* Nav Pills
 --------------------------------------------------------------------*/
 .nav-pills{

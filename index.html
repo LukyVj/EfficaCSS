@@ -23,9 +23,17 @@
     <![endif]-->
   </head>
 
-  <body>
-
-    <div class="jumbotron">
+  <body data-spy="scroll" data-target=".nav-top">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <ul class="nav nav-pills nav-top">
+      <li class="active"><a href="#home">Home</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#thirdparty">Messages</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron" id="home">
       <h1>Effica{CSS}</h1>
       <h3>A set of SASS & Bourbon mixins to power up your stylesheets<br/>And to provide you the best <span>OVCSS <span class="hidden">OrganiseViewsCSS</span></span> system.</h3>
     </div>
@@ -203,20 +211,8 @@ $ct: $color-theme;
             <h2>Mixins</h2>
           </header>
           <article>
-          <ul class="nav nav-pills">
-            <li>
-              <a href="#">Paths</a>
-            </li>
-            <li>
-              <a href="#">Fonts</a>
-            </li>
-            <li>
-              <a href="#">Colors</a>
-            </li>
-          </ul>
-
             <section>
-              <p>In adition of all the mixins brougth to you by <a href="http://bourbon.io">Bourbon</a>, the framework provide some other useful mixins to make your developement easy !<br/>
+              <p>In adition of all the mixins brougth to you by <a href="http://bourbon.io">Bourbon</a>, the framework provides some other useful mixins to make your developement easy !<br/>
               From the font, to the background, you can use many mixins to save your time !</p>
             </section>
 
@@ -445,14 +441,18 @@ $ct: $color-theme;
           <header><h2>Naming Conventions</h2></header>
           <article>
           <ul class="nav nav-pills">
+            <li> <strong>For :</strong> </li>
             <li>
-              <a href="#">Paths</a>
+              <a href="#">Variables</a>
             </li>
             <li>
-              <a href="#">Fonts</a>
+              <a href="#">Typography</a>
             </li>
             <li>
-              <a href="#">Colors</a>
+              <a href="#">Images</a>
+            </li>
+            <li>
+              <a href="#">Icons</a>
             </li>
           </ul>
 

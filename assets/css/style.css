@@ -1911,6 +1911,28 @@ strong {
     .col-md-4 {
       width: 100%; } }
 
+/* Navbar
+------------------------------------------------------------------*/
+.navbar {
+  background: transparent;
+  border: 0; }
+  .navbar ul {
+    padding-top: 1em;
+    float: right; }
+    .navbar ul li {
+      background: transparent; }
+      .navbar ul li a {
+        background: transparent;
+        color: #eebd2b; }
+      .navbar ul li.active {
+        font-weight: bold; }
+        .navbar ul li.active:hover a {
+          background: #eebd2b; }
+        .navbar ul li.active a {
+          background: transparent;
+          color: #eebd2b;
+          border: 1px solid #eebd2b; }
+
 /* Nav Pills
 --------------------------------------------------------------------*/
 .nav-pills li {

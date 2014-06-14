@@ -82,8 +82,7 @@ p{
   .anchor-down{
     color: $white;
     font-size: 2.2em;
-    @include square(1.8em);
-    background: rgba(255,255,255,.2);
+    @include square(1.8em, rgba(255,255,255,.2));
     padding: .4em .6em;
     border-radius: 100%;
     position: relative;
@@ -283,6 +282,7 @@ p{
     thead{
       tr{
         td{
+          min-width: 220px;
           &:first-child{
             @include font-family(courier, helvetica, serif);
           }

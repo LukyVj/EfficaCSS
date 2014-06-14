@@ -301,121 +301,140 @@ $ct: $color-theme;
                         <td>Helper radius class to apply a border-radius only on right</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin border-not()</td>
+                        <td>$size, $color, $type, $not</td>
+                        <td>Apply borders but not on one side. The $not parameter can be : <code>top, bottom, left, right</code></td>
+                      </tr>
+                      <tr class="info">
+                        <td>Graphic</td>
+                        <td></td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin square()</td>
+                        <td>$size, $color</td>
+                        <td>create a square by adding its dimensions and colors.</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin square-gradient()</td>
+                        <td>$size, $angle, $color-1, $color-2</td>
+                        <td>create a square by adding its dimensions and you have to specify a rotation angle for the gradient.</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin circle()</td>
+                        <td>$size, $color</td>
+                        <td>create a circle by adding its dimensions and colors.</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin circle-gradient()</td>
+                        <td>$size, $angle, $color-1, $color-2</td>
+                        <td>create a circle by adding its dimensions and you have to specify a rotation angle for the gradient.</td>
+                      </tr>
+                      <tr class="info">
+                        <td>Backgrounds</td>
+                        <td></td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin full-background()</td>
+                        <td>$fallback-color, $url</td>
+                        <td>Create a full centered cover background even on resize, you need to specify a fallback color.</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin contain-background()</td>
+                        <td>$fallback-color, $url</td>
+                        <td>Create a centered and contain background, you need to specify a fallback color</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin icon-background()</td>
+                        <td>$url</td>
+                        <td>A straight to the point way to add an icon as a background. </td>
+                      </tr>
+                      <tr class="info">
+                        <td>Box shadows</td>
+                        <td></td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin inset-shadow()</td>
+                        <td>$size-1, $color-1, $size-2, $color-2</td>
+                        <td>Add to a an element to create an inset effect, you have to define the size and colors.</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin outset-shadow()</td>
+                        <td>$size-1, $color-1, $size-2, $color-2</td>
+                        <td>Add to a an element to create an outset effect, you have to define the size and colors.</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin inset-shadow-simple()</td>
+                        <td>0</td>
+                        <td>Add to a an element to create an inset effect, simple effect, no parameters needed.</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin outset-shadow-simple()</td>
+                        <td>0</td>
+                        <td>Add to a an element to create an outset effect, simple effect, no parameters needed.</td>
+                      </tr>
+                      <tr class="info">
+                        <td>Text shadows</td>
+                        <td></td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin shadow-text-b()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a bottom text shadow. The $color-background attribute may have the same color value as the container</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin shadow-text-t()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a top text shadow. The $color-background attribute may have the same color value as the container</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin shadow-text-r()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a right text shadow. The $color-background attribute may have the same color value as the container</td>
                       </tr>
                       <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>@mixin shadow-text-l()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a left text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-br()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a bottom right text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-bl()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a bottom left text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-tr()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a top right text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-tl()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a top left text shadow. The $color-background attribute may have the same color value as the container</td>
                       </tr>
 
                     </tbody>
                   </table>
                 </section>
-            <ul>
-              <li>
                 <section>
-                  <header>
-                    <h2>Path</h2>
-                  </header>
-                    <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
-                  </article>
+                <h3>Usage</h3>
+                  <p>To use a mixin simply call it with its parameters : </p>
+
+                <pre><code>div{
+  @include square(5em, red);
+  @include outset-shadow();
+  @include shadow-text-b($bg-color, black);
+  @include border-right-radius(30px);
+}</code></pre>
                 </section>
-              </li>
-               <li>
-                <section>
-                   <header>
-                    <h2>Fonts</h2>
-                  </header>
-                  <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
-                  </article>
-                </section>
-              </li>
-               <li>
-                <section>
-                   <header>
-                    <h2>Colors</h2>
-                  </header>
-                   <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
-                  </article>
-                </section>
-              </li>
-            </ul>
           </article>
         </section>
       </div>

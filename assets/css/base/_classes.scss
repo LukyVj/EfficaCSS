@@ -1,0 +1,23 @@
+/* ====================================================================================================
+Classes : This library could be named helpers.css, here you will find all technical classes
+(ex : .hide, .clearfix, .fix )
+======================================================================================================*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* incetions
+--------------------------------------------------------------------------*/
+
+section{
+  &.inset{
+    @include inset-shadow(1px, white, 1px, black);
+
+    &:hover{
+      @include inset-shadow(1px, white, 1px, black);
+    }
+  }
+}

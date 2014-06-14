@@ -1,0 +1,23 @@
+/* ====================================================================================================
+Buttons : Here is the main buttons stylesheet
+======================================================================================================*/
+
+.btn{
+  border: 2px solid $w;
+
+  &:hover{
+    background: $w;
+    color: $p;
+  }
+
+
+  &.call-to-action{
+    background: $g;
+    border: none;
+    color: $w;
+    padding: .6em 1em;
+    border-bottom: 2px solid darken($g, 15%);
+  }
+}
+
+

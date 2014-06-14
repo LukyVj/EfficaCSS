@@ -1,0 +1,24 @@
+/* ====================================================================================================
+Base : This stylesheet will be your base, you will define the main lines of your project stylesheet.
+======================================================================================================*/
+$base-font-weight:300;
+$base-line-height:24px;
+
+
+*{
+  @include high();
+}
+
+html,body{
+  @include reset();
+  @include font-family(#{$font-name}-light, $font-fallback, sans-serif);
+}
+html{
+  font-size:29.1rem;
+  overflow-x:hidden;
+}
+
+strong{
+  @include font-family(#{$font-name}-semibold, $font-fallback, sans-serif);
+  font-weight: bold;
+}

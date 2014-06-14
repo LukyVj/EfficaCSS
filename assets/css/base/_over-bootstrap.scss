@@ -40,3 +40,40 @@
     }
   }
 }
+
+/* Tables
+--------------------------------------------------------------------*/
+.table>thead>tr>td.info,
+.table>tbody>tr>td.info,
+.table>tfoot>tr>td.info,
+.table>thead>tr>th.info,
+.table>tbody>tr>th.info,
+.table>tfoot>tr>th.info,
+.table>thead>tr.info>td,
+.table>tbody>tr.info>td,
+.table>tfoot>tr.info>td,
+.table>thead>tr.info>th,
+.table>tbody>tr.info>th,
+.table>tfoot>tr.info>th{
+  background: darken($ct, 25%);
+  color: $w;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+padding: 8px;
+line-height: 1.42857143;
+vertical-align: top;
+border-top: 1px solid darken($ct, 20%);
+}
+
+
+/* contextual class
+----------------------------------------------------------------------*/
+.text-danger{
+  color: $y;
+}

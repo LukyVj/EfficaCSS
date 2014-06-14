@@ -175,8 +175,6 @@ OVCSS Settings library :
 ----------------------------------------------------------------------*/
 /* Helper : Border-radius
 -------------------------------------------------------------------*/
-/* Helper : Borders
--------------------------------------------------------------------*/
 /* borders
 -----------------------------------------------------------------*/
 /* single element
@@ -1882,6 +1880,9 @@ strong {
   Even better, get a tech-debt story in which you can dedicate actual sprint time to it.
 
 */
+.table-responsive {
+  padding: 0 !important; }
+
 /* Page header
 ---------------------------------------------------------------------*/
 .page-header {
@@ -1910,6 +1911,40 @@ strong {
   .nav-pills li.active a {
     background: #e6ac00;
     color: #fff; }
+
+/* Tables
+--------------------------------------------------------------------*/
+.table > thead > tr > td.info,
+.table > tbody > tr > td.info,
+.table > tfoot > tr > td.info,
+.table > thead > tr > th.info,
+.table > tbody > tr > th.info,
+.table > tfoot > tr > th.info,
+.table > thead > tr.info > td,
+.table > tbody > tr.info > td,
+.table > tfoot > tr.info > td,
+.table > thead > tr.info > th,
+.table > tbody > tr.info > th,
+.table > tfoot > tr.info > th {
+  background: #094260;
+  color: #f3f3f5;
+  font-weight: bold;
+  font-size: 1.1em; }
+
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #0b5277; }
+
+/* contextual class
+----------------------------------------------------------------------*/
+.text-danger {
+  color: #eebd2b; }
 
 html[data-debug="true"] #debugWindow {
   opacity: 1; }
@@ -1975,6 +2010,13 @@ pre {
 
 p {
   font-size: 1.2em; }
+  p a {
+    color: #eebd2b;
+    border-bottom: 1px dotted; }
+    p a:hover {
+      text-decoration: none;
+      border-top: 1px dotted;
+      color: #eebd2b; }
 
 /* Jumbotron
 -----------------------------------------------------------------------*/
@@ -2135,6 +2177,20 @@ p {
       color: #eebd2b;
       text-decoration: none; }
 
+/* Table
+--------------------------------------------------------------------*/
+.table-responsive table {
+  width: 100%;
+  float: left;
+  border: 0;
+  font-size: 1.15em; }
+  .table-responsive table thead tr td:first-child {
+    font-family: courier, helvetica, serif; }
+  .table-responsive table thead tr th {
+    font-weight: bold; }
+.table-responsive code {
+  padding: .2em; }
+
 /* Footer
 --------------------------------------------------------------------*/
 .footer {
@@ -2150,3 +2206,5 @@ p {
   float: left; }
   .footer p {
     line-height: 80px; }
+    .footer p a {
+      color: #eebd2b; }

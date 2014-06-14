@@ -32,6 +32,16 @@ pre {
 
 p{
   font-size: 1.2em;
+  a{
+    color: $y;
+    border-bottom: 1px dotted;
+
+    &:hover{
+      text-decoration: none;
+      border-top: 1px dotted;
+      color: $y;
+    }
+  }
 }
 
 /* Jumbotron
@@ -111,6 +121,7 @@ p{
       &:hover{
         box-shadow: inset 1em 0 0 lighten($y, 3%);
       }
+
     }
 
     .nav-pills{
@@ -261,7 +272,29 @@ p{
   }
 }
 
-
+/* Table
+--------------------------------------------------------------------*/
+.table-responsive{
+  table{
+    width: 100%;
+    float: left;
+    border: 0;
+    font-size: 1.15em;
+    thead{
+      tr{
+        td{
+          &:first-child{
+            @include font-family(courier, helvetica, serif);
+          }
+        }
+        th{
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  code{padding: .2em;}
+}
 /* Footer
 --------------------------------------------------------------------*/
 .footer{
@@ -277,5 +310,8 @@ p{
 
   p{
     line-height: 80px;
+    a{
+      color: $y;
+    }
   }
 }

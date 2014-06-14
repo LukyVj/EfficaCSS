@@ -53,6 +53,21 @@
     }
   }
 }
+@mixin header-color($value){
+  @for $i from 1 through 6 {
+    h#{$i}{
+      color:$value;
+    }
+  }
+}
+@mixin header-padding($value){
+  @for $i from 1 through 6 {
+    h#{$i}{
+      padding:$value;
+    }
+  }
+}
+
 /* Helper : Border-radius
 -------------------------------------------------------------------*/
 @mixin border-top-radius($radius) {
@@ -70,24 +85,6 @@
 @mixin border-right-radius($radius) {
   border-bottom-right-radius: $radius;
   border-top-right-radius: $radius;
-}
-/* Helper : Borders
--------------------------------------------------------------------*/
-@mixin border-not-top($size, $type, $color) {
-  border: $size+px $type $color;
-  border-top: none;
-}
-@mixin border-not-bottom($size, $type, $color) {
-  border: $size+px $type $color;
-  border-bottom: none;
-}
-@mixin border-not-left($size, $type, $color) {
-  border: $size+px $type $color;
-  border-left: none;
-}
-@mixin border-not-right($size, $type, $color) {
-  border:$size+px $type $color;
-  border-right: none;
 }
 
 /* borders

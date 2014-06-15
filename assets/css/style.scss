@@ -55,8 +55,8 @@ p{
 
 .navbar-fixed-top{
   &.inv{
-
-  background: darken($b, 10%);
+  @include transition(all .3s ease);
+  background: darken(rgba($b,.8), 10%);
   padding-bottom: 1em;
   border-bottom: .2em solid $y;
   }

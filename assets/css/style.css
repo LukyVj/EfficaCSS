@@ -2165,7 +2165,10 @@ p {
       color: #eebd2b; }
 
 .navbar-fixed-top.inv {
-  background: #0f73a6;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: rgba(15, 115, 166, 0.8);
   padding-bottom: 1em;
   border-bottom: 0.2em solid #eebd2b; }
 

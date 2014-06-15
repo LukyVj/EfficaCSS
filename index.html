@@ -515,7 +515,8 @@ $lr: $light-red</code></pre>
                     <h3>Name it properly</h3>
                      <p>So You have a font called <strong>MyFont</strong></p>
 
-                      <li><h3>Add it to the framework</h3>
+                      <h3>Add it to the framework</h3>
+
                       <ul>
                         <li><span>1</span> : Create a folder called <strong>MyFont</strong> in <code>assets/fonts/</code></li>
                       <li><span>2</span> : Place your <strong>.ttf, .woff, .eot, .otf, .svg</strong> font files in <code>assets/fonts/<strong>MyFont</strong></code></li>
@@ -523,7 +524,6 @@ $lr: $light-red</code></pre>
                       <li><span>4</span> : Add a new variable <code>$MyFont-name</code></li>
                       <li><span>5</span> : Create a new path <code>$MyFont-directory: $path-fonts + $MyFont-name + "/";</code></li>
                       <li><span>6</span> : And finally, open your <code>_typography.scss</code> file and add the following code :</li>
-                      </ul></li>
                     </ul>
                     <pre><code>@include font($MyFont-directory, $MyFont-name+'-Regular');
 @include font($MyFont-directory, $MyFont-name+'-Light');

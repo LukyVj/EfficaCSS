@@ -189,8 +189,8 @@ OVCSS Settings library :
 --------------------------------------------------------------------*/
 /* Text-shadows [ b = bottom, t = top, r = right, l = left ]
 ---------------------------------------------------------------------*/
-/* Helper & debug mixins
-----------------------------------------------------------------*/
+/* Single elements
+--------------------------------------------------------------------*/
 /* Grid
 ---------------------------------------------------------------*/
 /* ==========================================================================
@@ -1885,6 +1885,7 @@ strong {
   .table-responsive tr td {
     min-width: 33.33% !important; }
     .table-responsive tr td:nth-child(1) {
+      width: 33.33% !important;
       font-family: courier, courier sans, serif;
       background: #0a4a6c;
       font-size: 1em !important; }

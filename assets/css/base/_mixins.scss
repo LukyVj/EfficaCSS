@@ -187,8 +187,13 @@
   text-shadow: -.035em -.035em 0 $color-background, -.065em -.065em 0 $color-shadow;
 }
 
-/* Helper & debug mixins
-----------------------------------------------------------------*/
+/* Single elements
+--------------------------------------------------------------------*/
+@mixin single-element(){
+  content:'';
+  display: block;
+  position: absolute;
+}
 
 /* Grid
 ---------------------------------------------------------------*/

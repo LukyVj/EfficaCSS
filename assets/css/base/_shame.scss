@@ -22,6 +22,7 @@ $s: 33.33%;
       min-width: $s $i;
 
       &:nth-child(1){
+      width: $s $i;
         @include font-family(courier, courier sans, serif);
         background: darken($ct, 22.5%);
         font-size: 1em $i;

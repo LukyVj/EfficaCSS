@@ -14,5 +14,5 @@ $path-img: $root + 'images/';
 $font-name: "ProximaNova";
 $font-fallback: "Helvetica";
 
-$font-directory: $path-fonts + "ProximaNova/";
+$font-directory: $path-fonts + $font-name + "/";
 

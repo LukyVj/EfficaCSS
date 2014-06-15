@@ -195,7 +195,7 @@ OVCSS Settings library :
 ---------------------------------------------------------------*/
 /* ==========================================================================
  OVCSS Typographic settings :
- ========================================================================== */
+========================================================================== */
 @font-face {
   font-family: ProximaNova-Regular;
   src: url("../fonts/ProximaNova/ProximaNova-Regular.eot?") format("eot"), url("../fonts/ProximaNova/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova/ProximaNova-Regular.svg#ProximaNova-Regular") format("svg"), url("../fonts/ProximaNova/ProximaNova-Regular.ttf") format("truetype"); }
@@ -1903,6 +1903,9 @@ strong {
 .page-header {
   border: none; }
 
+.col-md-1 {
+  width: 7.333333%; }
+
 /* Col-md-4
 --------------------------------------------------------------------*/
 .col-md-4 {
@@ -2045,6 +2048,12 @@ pre {
     text-shadow: 0 0 0;
     background: transparent; }
 
+a {
+  text-shadow: 0.035em 0.035em 0 #1393d5, 0.065em 0.065em 0 rgba(0, 0, 0, 0.2); }
+
+ul.nav-pills li a {
+  text-shadow: 0 0 0; }
+
 p {
   font-size: 1.2em; }
   p a {
@@ -2171,6 +2180,29 @@ p {
       .container .col-md-12 section ul li section h2 {
         font-size: 2.4em;
         color: #eebd2b; }
+  .container .col-md-12.require .col-md-8 {
+    box-shadow: inset 0 0 0 0.3em #0c5f8a;
+    padding: 0;
+    text-align: center;
+    height: 100px;
+    border-radius: 6px;
+    width: calc(100% - 1.4em);
+    margin-right: 2%;
+    margin-top: 2em; }
+    .container .col-md-12.require .col-md-8 a {
+      line-height: 100px;
+      color: #094260;
+      font-weight: bold;
+      font-size: 2.4em;
+      display: block;
+      float: left;
+      width: 100%;
+      height: 100%; }
+    .container .col-md-12.require .col-md-8:hover {
+      box-shadow: inset 0 0 0 0.3em #eebd2b; }
+      .container .col-md-12.require .col-md-8:hover a {
+        color: #eebd2b;
+        text-decoration: none; }
   .container .col-md-12.download section {
     padding-top: 2em; }
   .container .col-md-12.download a {
@@ -2191,13 +2223,25 @@ p {
       background: transparent; }
   .container .col-md-12:last-child section {
     margin-bottom: 4em; }
+.container .col-md-1 i {
+  font-size: 3em;
+  line-height: 4;
+  text-align: center; }
+.container .col-md-1.cont-icon {
+  left: -8%;
+  height: 60px;
+  padding: .1em; }
+  .container .col-md-1.cont-icon i {
+    line-height: 1;
+    font-size: 5em;
+    text-align: center; }
 .container .col-md-6 {
   box-shadow: inset 0 0 0 0.3em #0c5f8a;
   padding: 0;
   text-align: center;
   height: 100px;
   border-radius: 6px;
-  width: 48%;
+  width: 44%;
   margin-right: 2%;
   margin-top: 2em; }
   .container .col-md-6 a {

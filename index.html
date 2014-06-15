@@ -59,30 +59,32 @@
       </div>
 
       <!-- Require -->
-      <div class="col-md-12 require">
+      <div class="col-md-12 require" id="require">
         <section>
           <header>
             <h2>Require</h2>
           </header>
           <article>
               <div class="col-md-6">
-                <a href="http://sass-lang.com/">OVCSS</a>
-              </div>
-              <div class="col-md-6">
                 <a href="http://bourbon.io">Bourbon</a>
               </div>
+              <div class="col-md-1"> <i class="fa fa-plus"></i></div>
+
               <div class="col-md-6">
                 <a href="http://sass-lang.com/">SASS</a>
               </div>
-              <div class="col-md-6">
-                <a href="http://bourbon.io">Bourbon</a>
+
+              <div class="col-md-1 cont-icon"><i class="fa fa-chevron-down"></i></div>
+
+              <div class="col-md-8">
+                <a href="http://bourbon.io">OVCSS</a>
               </div>
           </article>
         </section>
       </div>
 
       <!-- Variables -->
-      <div class="col-md-12 variables">
+      <div class="col-md-12 variables"  id="variables">
         <section>
           <header>
             <h2>Variables</h2>
@@ -210,7 +212,7 @@ $ct: $color-theme;
       </div>
 
       <!-- Mixins -->
-      <div class="col-md-12 mixins">
+      <div class="col-md-12 mixins" id="mixins">
         <section>
           <header>
             <h2>Mixins</h2>
@@ -441,7 +443,7 @@ $ct: $color-theme;
       </div>
 
       <!-- Naming-conventions -->
-      <div class="col-md-12 naming-conventions">
+      <div class="col-md-12 naming-conventions" id="namingconventions">
         <section>
           <header><h2>Naming Conventions</h2></header>
           <article>
@@ -469,27 +471,82 @@ $ct: $color-theme;
               <li>
                 <section>
                   <header>
-                    <h2>Path</h2>
+                    <h2>Variables</h2>
                   </header>
                     <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>The variables names have to be clear, and to describe things clearly, to ensure clarity and efficacity.</p>
+                    <p>For example, you want to use a red color, so proceed like the following : </p>
+                    <pre><code>$red: #f00;</code></pre>
+                    <p>Well, now you want some different tints of your color : </p>
+                    <pre><code>$red: #f00;
+$dark-red: darken($red, 10%);
+$light-red: lighten($red, 10%);</code></pre>
+                    <p>Pretty logic and simple, and in a last effort, we want to minify them, to make the variables available as shortcuts :</p>
+<pre><code>$red: #f00;
+$dark-red: darken($red, 10%);
+$light-red: lighten($red, 10%);
+
+//Shortcuts
+$r: $red;
+$dr: $dark-red;
+$lr: $light-red</code></pre>
+                  <p>And thats it ! Follow this naming conventions rules, and you will use EfficaCSS at its climax !</p>
                   </article>
                 </section>
               </li>
                <li>
                 <section>
                    <header>
-                    <h2>Fonts</h2>
+                    <h2>Typography</h2>
                   </header>
                   <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>If you are using custom fonts, make sure to properly name your folder, and your fonts.</p>
+                    <p>You may have different versions of your font, like the <strong>Light</strong>, <strong>Regular</strong>, <strong>Semibold</strong> and <strong>Bold</strong> versions. <br/>
+                    Good news ! Because with EfficaCSS we've made it simple to manage ! And it's located in the <code>_typography.scss</code> file.</p>
+                    <pre><code>@include font($font-directory, $font-name+'-Regular');
+@include font($font-directory, $font-name+'-Light');
+@include font($font-directory, $font-name+'-Bold');
+@include font($font-directory, $font-name+'-Semibold');</code></pre>
+
+                    <p>As you can see, to import a font into your website, you just have to write these lines, and the framework handle everything else. </p>
+                    <h3>How to name a font</h3>
+                    <p>To make a font properly working, the project organisation is important, and the names are too.</p>
+                    <p>Let's say you want to use your own font called <strong>MyFont</strong>, you have to :</p>
+                    <h3>Name it properly</h3>
+                     <p>So You have a font called <strong>MyFont</strong></p>
+
+                      <li><h3>Add it to the framework</h3>
+                      <ul>
+                        <li><span>1</span> : Create a folder called <strong>MyFont</strong> in <code>assets/fonts/</code></li>
+                      <li><span>2</span> : Place your <strong>.ttf, .woff, .eot, .otf, .svg</strong> font files in <code>assets/fonts/<strong>MyFont</strong></code></li>
+                      <li><span>3</span> : Open <code>_variables.scss</code></li>
+                      <li><span>4</span> : Add a new variable <code>$MyFont-name</code></li>
+                      <li><span>5</span> : Create a new path <code>$MyFont-directory: $path-fonts + $MyFont-name + "/";</code></li>
+                      <li><span>6</span> : And finally, open your <code>_typography.scss</code> file and add the following code :</li>
+                      </ul></li>
+                    </ul>
+                    <pre><code>@include font($MyFont-directory, $MyFont-name+'-Regular');
+@include font($MyFont-directory, $MyFont-name+'-Light');
+@include font($MyFont-directory, $MyFont-name+'-Bold');
+@include font($MyFont-directory, $MyFont-name+'-Semibold');</code></pre>
+                    <p>And your font is now imported.</p>
                   </article>
                 </section>
               </li>
                <li>
                 <section>
                    <header>
-                    <h2>Colors</h2>
+                    <h2>Images</h2>
+                  </header>
+                   <article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                  </article>
+                </section>
+              </li>
+              <li>
+                <section>
+                   <header>
+                    <h2>Icons</h2>
                   </header>
                    <article>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>

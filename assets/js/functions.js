@@ -46,15 +46,15 @@ $(document).ready(function(){
   }
 
   // Show active menu links
-  function activeLinks(){
-    $menuLinks = $('.navbar li'),
+  function activeLinksTop(){
+    $menuLinks = $('.navbar li, .summary li'),
     $menuLinkActive = $menuLinks.hasClass('active');
 
     $menuLinks.on('click', function(e){
       e.preventDefault();
       var $this = $(this);
       $this.addClass('active');
-      $('*').not($this).removeClass('active');
+      $('.navbar li').not($this).removeClass('active');
     })
   }
 

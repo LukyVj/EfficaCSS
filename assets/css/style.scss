@@ -7,9 +7,61 @@
 body {
   background: $ct;
   color: $w;
+  font-size: 1.3em;
+}
+pre,
+code{
+  background: $ct;
+  color: $y;
+  text-shadow: 0 1px 0 darken($y, 18%);
+  border: 1px solid darken($ct, 18%);
+  padding-bottom: .3em;
+  padding-left: .4em;
+  padding-right: .4em;
+  line-height: 1.2;
+}
+pre {
+    background: darken($ct, 18%);
+    border: 1px solid darken($ct, 24%);
+      width: calc(100% - 1.4em);
+
+ code{
+  border: 0;
+  text-shadow: 0 0 0;
+    background: transparent;
 }
 
+}
 
+ul.nav-pills li a{
+  text-shadow: 0 0 0 ;
+}
+  p li {  font-size: 1.5em;
+}
+p{
+  font-size: 1.5em;
+
+  a{
+    color: $y;
+    border-bottom: 1px dotted;
+
+    &:hover{
+      text-decoration: none;
+      border-top: 1px dotted;
+      color: $y;
+    }
+  }
+}
+
+.navbar-fixed-top{
+  @include transition(all .4s ease);
+  &.inv{
+  @include transition(all .3s ease);
+  background: darken(rgba($b,.8), 10%);
+  padding-bottom: 1em;
+  border-bottom: .2em solid $y;
+  }
+}
 /* Jumbotron
 -----------------------------------------------------------------------*/
 .jumbotron{
@@ -18,15 +70,15 @@ body {
   background-attachment: fixed;
   text-align: center;
   position: relative;
-  z-index: 1;
   margin-bottom: 0;
-
 
   h1{
 
     font-size: 4em;
     vertical-align: middle;
     margin-top: 0em;
+    @include shadow-text-br(darken($p, 10%), darken(rgba($ct, .8), 20%));
+
 
   }
   h3{
@@ -46,8 +98,7 @@ body {
   .anchor-down{
     color: $white;
     font-size: 2.2em;
-    @include square(1.8em);
-    background: rgba(255,255,255,.2);
+    @include square(1.8em, rgba(255,255,255,.2));
     padding: .4em .6em;
     border-radius: 100%;
     position: relative;
@@ -64,6 +115,8 @@ body {
 ------------------------------------------------------------------*/
 
 .container{
+    @include header-weight(bold);
+
   .col-md-12{
 
     section{
@@ -83,6 +136,7 @@ body {
       &:hover{
         box-shadow: inset 1em 0 0 lighten($y, 3%);
       }
+
     }
 
     .nav-pills{
@@ -149,10 +203,44 @@ body {
           section{
             background: darken($p, 15%);
             width: calc(100% - 1.4em);
+            h3{
+              margin-top: 2em;
+            }
             h2{
-              font-size: 1.4em;
+              font-size: 2.4em;
               color: $y;
             }
+          }
+        }
+      }
+    }
+
+    &.require{
+      .col-md-8{
+        box-shadow: inset 0 0 0 .3em darken($p, 16%);
+        padding: 0;
+        text-align: center;
+        height: 100px;
+        border-radius: 6px;
+        width: calc(100% - 1.4em);
+        margin-right: 2%;
+        margin-top: 2em;
+
+        a{
+          line-height: 100px;
+          color: darken($p, 25%);
+          font-weight: bold;
+          font-size: 2.4em;
+          display: block;
+          float: left;
+          width: 100%;
+          height: 100%;
+        }
+          &:hover{
+          box-shadow: inset 0 0 0 .3em $y;
+          a{
+            color: $y;
+            text-decoration: none;
           }
         }
       }
@@ -180,12 +268,12 @@ body {
       height: 100px;
       box-shadow: inset 0 0 0 .1em darken($p, 20%);
 
-        &:hover{
-            box-shadow: inset 0 0 0 .1em $y;
-            color: $y;
-            text-decoration: none;
-            background:transparent;
-                  }
+      &:hover{
+          box-shadow: inset 0 0 0 .1em $y;
+          color: $y;
+          text-decoration: none;
+          background:transparent;
+        }
       }
     }
 
@@ -200,15 +288,32 @@ body {
     }
   }
 
-
+  .col-md-1{
+    i{
+      font-size: 3em;
+      line-height: 4;
+      text-align: center;
+    }
+    &.cont-icon{
+      left: -8%;
+      height: 60px;
+      padding: .1em;
+      i{
+        line-height: 1;
+        font-size: 5em;
+        text-align: center;
+      }
+    }
+  }
   .col-md-6{
     box-shadow: inset 0 0 0 .3em darken($p, 16%);
     padding: 0;
     text-align: center;
     height: 100px;
     border-radius: 6px;
-    width: 48%;
+    width: 44%;
     margin-right: 2%;
+    margin-top: 2em;
     a{
       line-height: 100px;
       color: darken($p, 25%);
@@ -230,7 +335,30 @@ body {
   }
 }
 
-
+/* Table
+--------------------------------------------------------------------*/
+.table-responsive{
+  table{
+    width: 100%;
+    float: left;
+    border: 0;
+    font-size: 1.15em;
+    thead{
+      tr{
+        td{
+          min-width: 220px;
+          &:first-child{
+            @include font-family(courier, helvetica, serif);
+          }
+        }
+        th{
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  code{padding: .2em;}
+}
 /* Footer
 --------------------------------------------------------------------*/
 .footer{
@@ -246,5 +374,36 @@ body {
 
   p{
     line-height: 80px;
+    a{
+      color: $y;
+    }
+  }
+}
+
+
+/* Features
+----------------------------------------------------------------------------*/
+/* Mixin result
+---------------------------------------------------------------------*/
+.mixin-result{
+  text-align: center;
+  line-height: 5em;
+  span{
+      line-height: 5em;
+  }
+
+  div{
+    @include square(5em, red);
+    @include outset-shadow-simple();
+    @include shadow-text-b($ct, black);
+    @include border-right-radius(30px);
+    @include transition(all .3s ease);
+
+    &:hover{
+      @include square-gradient(5em, 45deg, #663399, $color-theme);
+      @include inset-shadow-simple();
+      @include border-right-radius(0px);
+      @include border-left-radius(30px);
+    }
   }
 }

@@ -28,20 +28,22 @@ html[data-debug="true"]{
 
 // Debug window
 #debugWindow{
-    opacity: .4;
-    &:hover{opacity: 1;}
-    position: fixed;
-    z-index: 999999999;
-    top: 0;
-    left: 0;
-    padding:.2em 1em;
-    border: 2px solid #fff;
-    text-shadow: 0 1px 0 #000;
-
-    span{
-      cursor: pointer;
-      padding: .3em;
-      margin: auto .2em;
-    }
+  opacity: .4;
+  &:hover{
+    opacity: 1;
   }
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  padding:.2em 1em;
+  border: 2px solid #fff;
+  text-shadow: 0 1px 0 #000;
+
+  span{
+    cursor: pointer;
+    padding: .3em;
+    margin: auto .2em;
+  }
+}
 

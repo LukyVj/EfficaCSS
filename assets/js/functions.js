@@ -35,10 +35,67 @@ $(document).ready(function(){
     });
 
 
+ // Animate on scroll
+  function animateScroll(){
+        var $root = $('html:not(:animated), body:not(:animated)');
+    $('.navbar a').click(function() {
+        $root.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 800);
+    });
+  }
 
+  // Show active menu links
+  function activeLinksTop(){
+    $menuLinks = $('.navbar li, .summary li'),
+    $menuLinkActive = $menuLinks.hasClass('active');
+
+    $menuLinks.on('click', function(e){
+      e.preventDefault();
+      var $this = $(this);
+      $this.addClass('active');
+      $('.navbar li').not($this).removeClass('active');
+    })
+  }
+
+function showCategories(){
+  var env = $('.container .col-md-12 ');
+  var targetLi = env.find('ul li[class*="section-"]');
+  var button = env.find('.nav-pills li a');
+  button.on('click', function(e){
+    e.preventDefault();
+
+    var $this = $(this);
+    var $name = $this.data('target');
+    var $targ = targetLi.hasClass($name);
+    targetLi.hasClass($name).fadeIn();
+
+    console.log($name)
+  });
+}
+
+
+
+function headerScroll(){
+  var header = $('.navbar-fixed-top');
+  var heightJumbo = '160';
+  log.msg(heightJumbo)
+  $(document).on('scroll', function(e){
+    if($(window).scrollTop() > heightJumbo){
+      header.addClass('inv');
+    }else{
+            header.removeClass('inv');
+    }
+  })
+}
 
   function deploy(){
-    log.msg("Welcome on EfficaCSS, the powerful OCSS Framework.")
+    log.msg("Welcome on EfficaCSS, the powerful OCSS Framework.");
+
+    showCategories();
+    animateScroll();
+    activeLinksTop();
+    headerScroll();
   }
 
 

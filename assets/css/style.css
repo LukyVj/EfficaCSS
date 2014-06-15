@@ -160,14 +160,21 @@ OVCSS Settings library :
 /*
  Variables functions :
 */
- /* Start mixins, reset ect
+/* font var
+-----------------------------------------------------*/
+/*
+  Mixins EfficaCSS.
+*/
+/* Start mixins, reset ect
 -------------------------------------------------------------------*/
+/* Font settings
+-------------------------------------------------------------------*/
+/* Font-face
+------------------------------------------*/
+/* regular font management
+----------------------------------------------------------------------*/
 /* Helper : Border-radius
 -------------------------------------------------------------------*/
-/* Helper : Borders
--------------------------------------------------------------------*/
-/* Font
------------------------------------------------------------------*/
 /* borders
 -----------------------------------------------------------------*/
 /* single element
@@ -178,13 +185,17 @@ OVCSS Settings library :
 ------------------------------------------------------------------*/
 /* Shadow effects
 -------------------------------------------------------------------*/
-/* Helper & debug mixins
-----------------------------------------------------------------*/
+/* Inset outset blocks
+--------------------------------------------------------------------*/
+/* Text-shadows [ b = bottom, t = top, r = right, l = left ]
+---------------------------------------------------------------------*/
+/* Single elements
+--------------------------------------------------------------------*/
 /* Grid
 ---------------------------------------------------------------*/
 /* ==========================================================================
  OVCSS Typographic settings :
- ========================================================================== */
+========================================================================== */
 @font-face {
   font-family: ProximaNova-Regular;
   src: url("../fonts/ProximaNova/ProximaNova-Regular.eot?") format("eot"), url("../fonts/ProximaNova/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova/ProximaNova-Regular.svg#ProximaNova-Regular") format("svg"), url("../fonts/ProximaNova/ProximaNova-Regular.ttf") format("truetype"); }
@@ -1726,9 +1737,9 @@ Classes : This library could be named helpers.css, here you will find all techni
 /* incetions
 --------------------------------------------------------------------------*/
 section.inset, .container .col-md-12 section article > section {
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(0, 0, 0, 0.3); }
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.4); }
   section.inset:hover, .container .col-md-12 section article > section:hover {
-    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(0, 0, 0, 0.3); }
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.4); }
 
  /* ====================================================================================================
 Basic form stylesheet : Here you define the basic style of your forms
@@ -1747,6 +1758,87 @@ form input {
 /* ====================================================================================================
 Animations : Define CSS3 keyframes animations
 ======================================================================================================*/
+@-webkit-keyframes rollShadow {
+  0% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
+
+  12.5% {
+    text-shadow: -0.035em -0.035em 0 #0f73a6, -0.065em -0.065em 0 #0b5277; }
+
+  25% {
+    text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  37.5% {
+    text-shadow: 0.035em -0.035em 0 #0f73a6, 0.065em -0.065em 0 #0b5277; }
+
+  50% {
+    text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
+
+  62.5 {
+    text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 #0b5277; }
+
+  75% {
+    text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  87.5% {
+    text-shadow: -0.035em 0.035em 0 #0f73a6, -0.065em 0.065em 0 #0b5277; }
+
+  100% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
+@-moz-keyframes rollShadow {
+  0% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
+
+  12.5% {
+    text-shadow: -0.035em -0.035em 0 #0f73a6, -0.065em -0.065em 0 #0b5277; }
+
+  25% {
+    text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  37.5% {
+    text-shadow: 0.035em -0.035em 0 #0f73a6, 0.065em -0.065em 0 #0b5277; }
+
+  50% {
+    text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
+
+  62.5 {
+    text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 #0b5277; }
+
+  75% {
+    text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  87.5% {
+    text-shadow: -0.035em 0.035em 0 #0f73a6, -0.065em 0.065em 0 #0b5277; }
+
+  100% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
+@keyframes rollShadow {
+  0% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
+
+  12.5% {
+    text-shadow: -0.035em -0.035em 0 #0f73a6, -0.065em -0.065em 0 #0b5277; }
+
+  25% {
+    text-shadow: 0 -0.035em 0 #0f73a6, 0 -0.065em 0 #0b5277; }
+
+  37.5% {
+    text-shadow: 0.035em -0.035em 0 #0f73a6, 0.065em -0.065em 0 #0b5277; }
+
+  50% {
+    text-shadow: 0.035em 0 0 #0f73a6, 0.065em 0 0 #0b5277; }
+
+  62.5 {
+    text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 #0b5277; }
+
+  75% {
+    text-shadow: 0 0.035em 0 #0f73a6, 0 0.065em 0 #0b5277; }
+
+  87.5% {
+    text-shadow: -0.035em 0.035em 0 #0f73a6, -0.065em 0.065em 0 #0b5277; }
+
+  100% {
+    text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
 /* ====================================================================================================
 Base : This stylesheet will be your base, you will define the main lines of your project stylesheet.
 ======================================================================================================*/
@@ -1756,8 +1848,8 @@ Base : This stylesheet will be your base, you will define the main lines of your
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 300;
-  line-height: 24px; }
+  font-weight: 500;
+  line-height: 32px; }
 
 html, body {
   width: 100%;
@@ -1765,14 +1857,13 @@ html, body {
   margin: 0;
   padding: 0;
   float: left;
-  font-family: ProximaNova-light, "Comic sans ms", sans-serif; }
+  font-family: ProximaNova-light, "Helvetica", sans-serif; }
 
 html {
-  font-size: 29.1rem;
   overflow-x: hidden; }
 
 strong {
-  font-family: ProximaNova-semibold, "Comic sans ms", sans-serif;
+  font-family: ProximaNova-semibold, "Helvetica", sans-serif;
   font-weight: bold; }
 
  /*
@@ -1788,10 +1879,32 @@ strong {
   Even better, get a tech-debt story in which you can dedicate actual sprint time to it.
 
 */
+.table-responsive {
+  padding: 0 !important; }
+  .table-responsive tr td {
+    min-width: 33.33% !important; }
+    .table-responsive tr td:nth-child(1) {
+      width: 33.33% !important;
+      font-family: courier, courier sans, serif;
+      background: #0a4a6c;
+      font-size: 1em !important; }
+    .table-responsive tr td:nth-child(2) {
+      font-family: courier, courier sans, serif;
+      background: #0a5175; }
+  .table-responsive tr:hover td:nth-child(1) {
+    color: #eebd2b; }
+  .table-responsive tr:hover td:nth-child(2) {
+    color: #eebd2b; }
+  .table-responsive tr:hover.info:hover td {
+    color: #f3f3f5; }
+
 /* Page header
 ---------------------------------------------------------------------*/
 .page-header {
   border: none; }
+
+.col-md-1 {
+  width: 7.333333%; }
 
 /* Col-md-4
 --------------------------------------------------------------------*/
@@ -1800,6 +1913,28 @@ strong {
   @media all and (max-width: 65em) {
     .col-md-4 {
       width: 100%; } }
+
+/* Navbar
+------------------------------------------------------------------*/
+.navbar {
+  background: transparent;
+  border: 0; }
+  .navbar ul {
+    padding-top: 1em;
+    float: right; }
+    .navbar ul li {
+      background: transparent; }
+      .navbar ul li a {
+        background: transparent;
+        color: #eebd2b; }
+      .navbar ul li.active {
+        font-weight: bold; }
+        .navbar ul li.active:hover a {
+          background: #eebd2b; }
+        .navbar ul li.active a {
+          background: transparent;
+          color: #eebd2b;
+          border: 1px solid #eebd2b; }
 
 /* Nav Pills
 --------------------------------------------------------------------*/
@@ -1816,6 +1951,137 @@ strong {
   .nav-pills li.active a {
     background: #e6ac00;
     color: #fff; }
+
+/* Tables
+--------------------------------------------------------------------*/
+.table > thead > tr > td.info,
+.table > tbody > tr > td.info,
+.table > tfoot > tr > td.info,
+.table > thead > tr > th.info,
+.table > tbody > tr > th.info,
+.table > tfoot > tr > th.info,
+.table > thead > tr.info > td,
+.table > tbody > tr.info > td,
+.table > tfoot > tr.info > td,
+.table > thead > tr.info > th,
+.table > tbody > tr.info > th,
+.table > tfoot > tr.info > th {
+  background: #094260;
+  color: #f3f3f5;
+  font-weight: bold;
+  font-size: 1.1em; }
+
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #0b5277; }
+
+/* contextual class
+----------------------------------------------------------------------*/
+.text-danger {
+  color: #eebd2b; }
+
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+.hljs {
+  display: block;
+  padding: 0.5em;
+  background: #002b36;
+  color: #839496; }
+
+.hljs-comment,
+.hljs-template_comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string,
+.hljs-javadoc {
+  color: #586e75; }
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #859900; }
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.hljs-phpdoc,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: #2aa198; }
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-localvars,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function {
+  color: #268bd2; }
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.haskell .hljs-type,
+.hljs-link_reference {
+  color: #b58900; }
+
+/* Solarized Orange */
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.clojure .hljs-title,
+.css .hljs-pseudo,
+.hljs-header {
+  color: #cb4b16; }
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f; }
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4; }
+
+.tex .hljs-formula {
+  background: #073642; }
 
 html[data-debug="true"] #debugWindow {
   opacity: 1; }
@@ -1859,7 +2125,56 @@ html[data-debug="true"] body[data-debug-animation*="true"] * {
  ========================================================================== */
 body {
   background: #1393d5;
-  color: #f3f3f5; }
+  color: #f3f3f5;
+  font-size: 1.3em; }
+
+pre,
+code {
+  background: #1393d5;
+  color: #eebd2b;
+  text-shadow: 0 1px 0 #af870e;
+  border: 1px solid #0b5981;
+  padding-bottom: .3em;
+  padding-left: .4em;
+  padding-right: .4em;
+  line-height: 1.2; }
+
+pre {
+  background: #0b5981;
+  border: 1px solid #094565;
+  width: calc(100% - 1.4em); }
+  pre code {
+    border: 0;
+    text-shadow: 0 0 0;
+    background: transparent; }
+
+ul.nav-pills li a {
+  text-shadow: 0 0 0; }
+
+p li {
+  font-size: 1.5em; }
+
+p {
+  font-size: 1.5em; }
+  p a {
+    color: #eebd2b;
+    border-bottom: 1px dotted; }
+    p a:hover {
+      text-decoration: none;
+      border-top: 1px dotted;
+      color: #eebd2b; }
+
+.navbar-fixed-top {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  .navbar-fixed-top.inv {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background: rgba(15, 115, 166, 0.8);
+    padding-bottom: 1em;
+    border-bottom: 0.2em solid #eebd2b; }
 
 /* Jumbotron
 -----------------------------------------------------------------------*/
@@ -1870,12 +2185,12 @@ body {
   background-attachment: fixed;
   text-align: center;
   position: relative;
-  z-index: 1;
   margin-bottom: 0; }
   .jumbotron h1 {
     font-size: 4em;
     vertical-align: middle;
-    margin-top: 0em; }
+    margin-top: 0em;
+    text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 rgba(11, 82, 119, 0.8); }
   .jumbotron h3 {
     vertical-align: middle;
     padding-top: 0;
@@ -1883,7 +2198,7 @@ body {
   .jumbotron .btn.call-to-action {
     margin: 5em auto;
     width: 310px;
-    font-family: ProximaNova-bold, "Comic sans ms", sans-serif;
+    font-family: ProximaNova-bold, "Helvetica", sans-serif;
     font-size: 1em; }
   .jumbotron .anchor-down {
     color: #f3f3f5;
@@ -1900,6 +2215,18 @@ body {
 
 /* Container
 ------------------------------------------------------------------*/
+.container h1 {
+  font-weight: bold; }
+.container h2 {
+  font-weight: bold; }
+.container h3 {
+  font-weight: bold; }
+.container h4 {
+  font-weight: bold; }
+.container h5 {
+  font-weight: bold; }
+.container h6 {
+  font-weight: bold; }
 .container .col-md-12 {
   /* Summary tab
   -----------------------------------------------------------------------------*/
@@ -1959,9 +2286,34 @@ body {
     .container .col-md-12 section ul li section {
       background: #0d638f;
       width: calc(100% - 1.4em); }
+      .container .col-md-12 section ul li section h3 {
+        margin-top: 2em; }
       .container .col-md-12 section ul li section h2 {
-        font-size: 1.4em;
+        font-size: 2.4em;
         color: #eebd2b; }
+  .container .col-md-12.require .col-md-8 {
+    box-shadow: inset 0 0 0 0.3em #0c5f8a;
+    padding: 0;
+    text-align: center;
+    height: 100px;
+    border-radius: 6px;
+    width: calc(100% - 1.4em);
+    margin-right: 2%;
+    margin-top: 2em; }
+    .container .col-md-12.require .col-md-8 a {
+      line-height: 100px;
+      color: #094260;
+      font-weight: bold;
+      font-size: 2.4em;
+      display: block;
+      float: left;
+      width: 100%;
+      height: 100%; }
+    .container .col-md-12.require .col-md-8:hover {
+      box-shadow: inset 0 0 0 0.3em #eebd2b; }
+      .container .col-md-12.require .col-md-8:hover a {
+        color: #eebd2b;
+        text-decoration: none; }
   .container .col-md-12.download section {
     padding-top: 2em; }
   .container .col-md-12.download a {
@@ -1982,14 +2334,27 @@ body {
       background: transparent; }
   .container .col-md-12:last-child section {
     margin-bottom: 4em; }
+.container .col-md-1 i {
+  font-size: 3em;
+  line-height: 4;
+  text-align: center; }
+.container .col-md-1.cont-icon {
+  left: -8%;
+  height: 60px;
+  padding: .1em; }
+  .container .col-md-1.cont-icon i {
+    line-height: 1;
+    font-size: 5em;
+    text-align: center; }
 .container .col-md-6 {
   box-shadow: inset 0 0 0 0.3em #0c5f8a;
   padding: 0;
   text-align: center;
   height: 100px;
   border-radius: 6px;
-  width: 48%;
-  margin-right: 2%; }
+  width: 44%;
+  margin-right: 2%;
+  margin-top: 2em; }
   .container .col-md-6 a {
     line-height: 100px;
     color: #094260;
@@ -2004,6 +2369,22 @@ body {
     .container .col-md-6:hover a {
       color: #eebd2b;
       text-decoration: none; }
+
+/* Table
+--------------------------------------------------------------------*/
+.table-responsive table {
+  width: 100%;
+  float: left;
+  border: 0;
+  font-size: 1.15em; }
+  .table-responsive table thead tr td {
+    min-width: 220px; }
+    .table-responsive table thead tr td:first-child {
+      font-family: courier, helvetica, serif; }
+  .table-responsive table thead tr th {
+    font-weight: bold; }
+.table-responsive code {
+  padding: .2em; }
 
 /* Footer
 --------------------------------------------------------------------*/
@@ -2020,3 +2401,37 @@ body {
   float: left; }
   .footer p {
     line-height: 80px; }
+    .footer p a {
+      color: #eebd2b; }
+
+/* Features
+----------------------------------------------------------------------------*/
+/* Mixin result
+---------------------------------------------------------------------*/
+.mixin-result {
+  text-align: center;
+  line-height: 5em; }
+  .mixin-result span {
+    line-height: 5em; }
+  .mixin-result div {
+    width: 5em;
+    height: 5em;
+    background: red;
+    box-shadow: inset 0 0.2em 0 rgba(255, 255, 255, 0.3), inset 0 -0.2em 0 rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0.035em 0 #1393d5, 0 0.065em 0 black;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .mixin-result div:hover {
+      width: 5em;
+      height: 5em;
+      background-color: #663399;
+      background-image: -webkit-linear-gradient(-315deg, #663399, #1393d5);
+      background-image: linear-gradient(45deg,#663399, #1393d5);
+      box-shadow: inset 0 -0.2em 0 rgba(255, 255, 255, 0.3), inset 0 0.2em 0 rgba(0, 0, 0, 0.4);
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 30px;
+      border-top-left-radius: 30px; }

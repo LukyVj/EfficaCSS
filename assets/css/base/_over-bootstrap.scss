@@ -4,6 +4,10 @@
   border: none;
 }
 
+.col-md-1 {
+width: 7.333333%;
+}
+
 /* Col-md-4
 --------------------------------------------------------------------*/
 .col-md-4 {
@@ -13,7 +17,35 @@
     width: 100%;
   }
 }
+/* Navbar
+------------------------------------------------------------------*/
+.navbar{
+  background: transparent;
+  border: 0;
+  ul{
+    padding-top: 1em;
+    float: right;
+    li{
+      background: transparent;
+      a{
+        background: transparent;
+        color: $y;
+      }
 
+      &.active{
+           font-weight: bold;
+        &:hover{
+          a{background: $y;}
+        }
+        a{
+           background: transparent;
+           color: $y;
+           border: 1px solid $y;
+        }
+      }
+    }
+  }
+}
 /* Nav Pills
 --------------------------------------------------------------------*/
 .nav-pills{
@@ -39,4 +71,41 @@
       }
     }
   }
+}
+
+/* Tables
+--------------------------------------------------------------------*/
+.table>thead>tr>td.info,
+.table>tbody>tr>td.info,
+.table>tfoot>tr>td.info,
+.table>thead>tr>th.info,
+.table>tbody>tr>th.info,
+.table>tfoot>tr>th.info,
+.table>thead>tr.info>td,
+.table>tbody>tr.info>td,
+.table>tfoot>tr.info>td,
+.table>thead>tr.info>th,
+.table>tbody>tr.info>th,
+.table>tfoot>tr.info>th{
+  background: darken($ct, 25%);
+  color: $w;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+padding: 8px;
+line-height: 1.42857143;
+vertical-align: top;
+border-top: 1px solid darken($ct, 20%);
+}
+
+
+/* contextual class
+----------------------------------------------------------------------*/
+.text-danger{
+  color: $y;
 }

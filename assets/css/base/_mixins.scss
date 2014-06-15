@@ -1,4 +1,9 @@
- /* Start mixins, reset ect
+/*
+  Mixins EfficaCSS.
+*/
+
+
+/* Start mixins, reset ect
 -------------------------------------------------------------------*/
 @mixin reset {
   width:100%;
@@ -14,6 +19,53 @@
   -moz-osx-font-smoothing: grayscale;
   font-weight:$base-font-weight;
   line-height:$base-line-height;
+}
+
+/* Font settings
+-------------------------------------------------------------------*/
+/* Font-face
+------------------------------------------*/
+@mixin font($url, $name){
+  @font-face {
+    font-family: #{$name};
+    src:url("#{$url}#{$name}.eot?") format("eot"),
+        url("#{$url}#{$name}.woff") format("woff"),
+        url("#{$url}#{$name}.svg##{$name}") format("svg"),
+        url("#{$url}#{$name}.ttf") format("truetype");
+  }
+}
+
+/* regular font management
+----------------------------------------------------------------------*/
+@mixin font-family($font, $fallback, $serif){
+  font-family: $font, $fallback, $serif;
+}
+@mixin selected-family(){
+  @include font-family($font-name, $font-fallback, serif);
+}
+
+
+
+@mixin header-weight($value){
+  @for $i from 1 through 6 {
+    h#{$i}{
+      font-weight:$value;
+    }
+  }
+}
+@mixin header-color($value){
+  @for $i from 1 through 6 {
+    h#{$i}{
+      color:$value;
+    }
+  }
+}
+@mixin header-padding($value){
+  @for $i from 1 through 6 {
+    h#{$i}{
+      padding:$value;
+    }
+  }
 }
 
 /* Helper : Border-radius
@@ -34,34 +86,6 @@
   border-bottom-right-radius: $radius;
   border-top-right-radius: $radius;
 }
-/* Helper : Borders
--------------------------------------------------------------------*/
-@mixin border-not-top($size, $type, $color) {
-  border: $size+px $type $color;
-  border-top: none;
-}
-@mixin border-not-bottom($size, $type, $color) {
-  border: $size+px $type $color;
-  border-bottom: none;
-}
-@mixin border-not-left($size, $type, $color) {
-  border: $size+px $type $color;
-  border-left: none;
-}
-@mixin border-not-right($size, $type, $color) {
-  border:$size+px $type $color;
-  border-right: none;
-}
-
-
-/* Font
------------------------------------------------------------------*/
-@mixin font-family($font, $fallback, $serif){
-  font-family: $font, $fallback, $serif;
-}
-@mixin selected-family(){
-  @include font-family($font-name, $font-fallback, serif);
-}
 
 /* borders
 -----------------------------------------------------------------*/
@@ -79,9 +103,26 @@
 
 /* Square
 ------------------------------------------------------------------*/
-@mixin square($size){
+@mixin square($size, $color){
   width: $size;
   height: $size;
+  background: $color;
+}
+@mixin square-gradient($size, $angle, $color-1, $color-2){
+  width: $size;
+  height: $size;
+
+  @include linear-gradient($angle, $color-1, $color-2)
+}
+@mixin circle($size, $color){
+  width: $size;
+  height: $size;
+  background: $color;
+}
+@mixin circle-gradient($size, $color){
+  width: $size;
+  height: $size;
+  @include linear-gradient($angle, $color-1, $color-2);
 }
 
 /* Backgrounds
@@ -102,15 +143,57 @@
 
 /* Shadow effects
 -------------------------------------------------------------------*/
-@mixin inset-shadow($size-1,$color-1,$size-2,$color-2){
-  box-shadow: inset 0 -#{$size-1} 0 rgba($color-1, .2), inset 0 $size-2 0 rgba($color-2, .3);
+
+/* Inset outset blocks
+--------------------------------------------------------------------*/
+@mixin inset-shadow-simple(){
+  box-shadow: inset 0 -.2em 0 rgba(white, .3), inset 0 .2em 0 rgba(black, .4);
 }
-@mixin outset-shadow($size-1,$color-1,$size-2,$color-2){
-  box-shadow: inset 0 $size-1 0 rgba($color-1, .2), inset 0 -#{$size-2} 0 rgba($color-2, .3);
+@mixin outset-shadow-simple(){
+  box-shadow: inset 0 .2em 0 rgba(white, .3), inset 0 -.2em 0 rgba(black, .4);
+}
+@mixin inset-shadow($size-1, $color-1, $size-2, $color-2){
+  box-shadow: inset 0 -#{$size-1} 0 rgba($color-1, .3), inset 0 $size-2 0 rgba($color-2, .4);
+}
+@mixin outset-shadow($size-1, $color-1, $size-2, $color-2){
+  box-shadow: inset 0 $size-1 0 rgba($color-1, .3), inset 0 -#{$size-2} 0 rgba($color-2, .4);
 }
 
-/* Helper & debug mixins
-----------------------------------------------------------------*/
+/* Text-shadows [ b = bottom, t = top, r = right, l = left ]
+---------------------------------------------------------------------*/
+@mixin shadow-text-b($color-background, $color-shadow){
+  text-shadow: 0 .035em 0 $color-background, 0 .065em 0 $color-shadow;
+}
+@mixin shadow-text-t($color-background, $color-shadow){
+  text-shadow: 0 -.035em 0 $color-background, 0 -.065em 0 $color-shadow;
+}
+@mixin shadow-text-r($color-background, $color-shadow){
+  text-shadow: .035em 0 0 $color-background, .065em 0  0 $color-shadow;
+}
+@mixin shadow-text-l($color-background,$color-shadow){
+  text-shadow: -.035em 0 0 $color-background,-.065em 0 0 $color-shadow;
+}
+
+@mixin shadow-text-br($color-background, $color-shadow){
+  text-shadow: .035em .035em 0 $color-background, .065em .065em 0 $color-shadow;
+}
+@mixin shadow-text-bl($color-background, $color-shadow){
+  text-shadow: -.035em .035em 0 $color-background, -.065em .065em 0 $color-shadow;
+}
+@mixin shadow-text-tr($color-background, $color-shadow){
+  text-shadow: .035em -.035em 0 $color-background, .065em -.065em 0 $color-shadow;
+}
+@mixin shadow-text-tl($color-background, $color-shadow){
+  text-shadow: -.035em -.035em 0 $color-background, -.065em -.065em 0 $color-shadow;
+}
+
+/* Single elements
+--------------------------------------------------------------------*/
+@mixin single-element(){
+  content:'';
+  display: block;
+  position: absolute;
+}
 
 /* Grid
 ---------------------------------------------------------------*/

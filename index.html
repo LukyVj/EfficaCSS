@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/highlight.pack.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,8 +25,16 @@
   </head>
 
   <body>
-
-    <div class="jumbotron">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="background-navbar"></div>
+  <div class="container">
+    <ul class="nav nav-pills nav-top">
+      <li class="active"><a href="#home">Home</a></li>
+      <li><a href="#download">Download</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron" id="home">
       <h1>Effica{CSS}</h1>
       <h3>A set of SASS & Bourbon mixins to power up your stylesheets<br/>And to provide you the best <span>OVCSS <span class="hidden">OrganiseViewsCSS</span></span> system.</h3>
     </div>
@@ -40,36 +49,44 @@
           </header>
           <article>
             <ul>
-              <li><a href="#">Require</a></li>
-              <li><a href="#">Variables</a></li>
-              <li><a href="#">Mixins</a></li>
-              <li><a href="#">Naming Conventions</a></li>
-              <li><a href="#">Examples</a></li>
-              <li><a href="#">Download</a></li>
+              <li><a href="#require">Require</a></li>
+              <li><a href="#variables">Variables</a></li>
+              <li><a href="#mixins">Mixins</a></li>
+              <li><a href="#namingconventions">Naming Conventions</a></li>
+              <li><a href="#examples">Examples</a></li>
+              <li><a href="#download">Download</a></li>
             </ul>
           </article>
         </section>
       </div>
 
       <!-- Require -->
-      <div class="col-md-12 require">
+      <div class="col-md-12 require" id="require">
         <section>
           <header>
             <h2>Require</h2>
           </header>
           <article>
               <div class="col-md-6">
-                <a href="#">SASS</a>
+                <a href="http://bourbon.io">Bourbon</a>
               </div>
+              <div class="col-md-1"> <i class="fa fa-plus"></i></div>
+
               <div class="col-md-6">
-                <a href="#">Bourbon</a>
+                <a href="http://sass-lang.com/">SASS</a>
+              </div>
+
+              <div class="col-md-1 cont-icon"><i class="fa fa-chevron-down"></i></div>
+
+              <div class="col-md-8">
+                <a href="http://bourbon.io">OVCSS</a>
               </div>
           </article>
         </section>
       </div>
 
       <!-- Variables -->
-      <div class="col-md-12 variables">
+      <div class="col-md-12 variables"  id="variables">
         <section>
           <header>
             <h2>Variables</h2>
@@ -77,13 +94,13 @@
           <article>
             <ul class="nav nav-pills">
             <li>
-              <a href="#">Paths</a>
+              <a href="#" data-target="path">Paths</a>
             </li>
             <li>
-              <a href="#">Fonts</a>
+              <a href="#" data-target="fonts">Fonts</a>
             </li>
             <li>
-              <a href="#">Colors</a>
+              <a href="#" data-target="colors">Colors</a>
             </li>
             </ul>
 
@@ -92,33 +109,101 @@
             </section>
 
             <ul>
-              <li>
+              <li class="section-path">
                 <section>
                   <header>
                     <h2>Path</h2>
                   </header>
                     <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>To make the maintenance easy, you can declare your assets path in a separate <code>.scss</code> file, called <code>_variables.scss</code></p>
+                    <p>Keep this file at the top of your sass file, to make the path variable accessible to any OVCSS components.</p>
+                    <h3>Keep everything clean</h3>
+                    <p>To easily track your files and ressources, you can custom your own path like the following :</p>
+                    <pre><code>$root: '../';
+
+$path-css: $root + 'css/';
+$path-js: $root + 'js/';
+$path-fonts: $root + 'fonts/';
+$path-img: $root + 'images/';</code></pre>
+
+                    <h3>Usecase</h3>
+                    <p>Let's say you have your own icons set, and you put them in you <code>images</code> path, into a <code>svg</code> folder.</p>
+                    <p><strong>1</strong> Add a new variable to <code>_variables.scss</code></p>
+                    <pre><code>$path-svg: $path-image + 'svg/'</code></pre>
+
+                    <p><strong>2</strong> Add an @each function to your <code>_icons.scss</code></p>
+                    <pre><code>$icons: "phone", "twitter", "email";
+
+@each $icon in $icons {
+  .ico{
+    &[class*="ico-#{($icon)}"]{
+      &:before{
+        @include icon-background('#{$path-svg}#{($icon)}.svg');
+      }
+    }
+  }
+}</code></pre>
                   </article>
                 </section>
               </li>
-               <li>
+               <li class="section-fonts">
                 <section>
                    <header>
                     <h2>Fonts</h2>
                   </header>
                   <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>The framework use a smart font system, that requires a minimum setting. on the same <code>_variables.scss</code>, you can set <strong>3</strong> different parameters.</p>
+                    <pre><code>$font-name: "ProximaNova";
+$font-fallback: "Helvetica";
+
+$font-directory: $path-fonts + "ProximaNova/";
+</code></pre>
                   </article>
                 </section>
               </li>
-               <li>
+               <li class="section-colors">
                 <section>
                    <header>
                     <h2>Colors</h2>
                   </header>
                    <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>To keep the whole design easy to maintain, EfficaCSS use colors variables, and shorten colors variables.<br/>
+                    Here is a sample of the <code>_color.scss</code> file this page is using.</p>
+                    <pre><code>$purple: #663399;
+$text-purple: #4B5184;
+$dark-purple: #363953;
+$light-purple: #C8C9DA;
+
+$grey: #EFF0F2;
+$light-grey: #FAFBFB;
+$dark-grey: #9295A4;
+
+$blue: #1393D5;
+$white: #F3F3F5;
+$yellow: #EEBD2B;
+$green: #83BC49;
+
+/* Shortcuts
+--------------------------------------------------------------------------------------------------*/
+$p: $purple;
+$dp: $dark-purple;
+$lp: $light-purple;
+$tp: $text-purple;
+
+$ge: $grey;
+$lg: $light-grey;
+$dg: $dark-grey;
+
+$b: $blue;
+$w: $white;
+$y: $yellow;
+$g: $green;
+
+/* Theme
+--------------------------------------------------------------------------------------------------*/
+$color-theme: $b;
+$ct: $color-theme;
+</code></pre>
                   </article>
                 </section>
               </li>
@@ -129,78 +214,275 @@
       </div>
 
       <!-- Mixins -->
-      <div class="col-md-12 mixins">
+      <div class="col-md-12 mixins" id="mixins">
         <section>
           <header>
             <h2>Mixins</h2>
           </header>
           <article>
-          <ul class="nav nav-pills">
-            <li>
-              <a href="#">Paths</a>
-            </li>
-            <li>
-              <a href="#">Fonts</a>
-            </li>
-            <li>
-              <a href="#">Colors</a>
-            </li>
-          </ul>
-
             <section>
-              <p>The framework use different variables, such as color variables or even font-names, path, or anything that needs to be used more than one time. And in order to make the CSS developement easier !</p>
+              <p>In adition of all the mixins brougth to you by <a href="http://bourbon.io">Bourbon</a>, the framework provides some other useful mixins to make your developement easy !<br/>
+              From the font, to the background, you can use many mixins to save your time !</p>
             </section>
 
-            <ul>
-              <li>
-                <section>
-                  <header>
-                    <h2>Path</h2>
-                  </header>
-                    <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
-                  </article>
+            <section class="table-responsive">
+                  <table class="table ">
+                    <thead>
+                      <tr >
+                        <th>@mixin</th>
+                        <th>Parameters</th>
+                        <th>Effect</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="info">
+                        <td>Settings</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin reset()</td>
+                        <td>0</td>
+                        <td>Small reset, set an element ready for content, used essentially with <code>html,body</code></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin high()</td>
+                        <td>0</td>
+                        <td>This mixin apply high quality proprieties to the page content. used essentially with <code>html, body</code></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin font()</td>
+                        <td>$url, $name</td>
+                        <td>Use it to create a complete font-face call, You don't need to specify the extension of the file.</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin font-family()</td>
+                        <td>$font, $fallback, $serif</td>
+                        <td>Use this mixin to create a font-family properiety</td>
+                      </tr>
+                      <tr class="info">
+                        <td>Headers</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin header-weight()</td>
+                        <td>$value</td>
+                        <td>Apply a font-weight to every headers from <code>h1</code> to <code>h6</code></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin header-color()</td>
+                        <td>$value</td>
+                        <td>Apply a color to every headers from <code>h1</code> to <code>h6</code></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin header-padding()</td>
+                        <td>$value</td>
+                        <td>Apply a padding to every headers from <code>h1</code> to <code>h6</code> <span class="text-danger">Do not apply em unit if you want a regular effect</span></td>
+                      </tr>
+                      <tr class="info">
+                        <td>Borders</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin border-top-radius()</td>
+                        <td>$radius</td>
+                        <td>Helper radius class to apply a border-radius only on top</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin border-bottom-radius()</td>
+                        <td>$radius</td>
+                        <td>Helper radius class to apply a border-radius only on bottom</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin border-left-radius()</td>
+                        <td>$radius</td>
+                        <td>Helper radius class to apply a border-radius only on left</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin border-right-radius()</td>
+                        <td>$radius</td>
+                        <td>Helper radius class to apply a border-radius only on right</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin border-not()</td>
+                        <td>$size, $color, $type, $not</td>
+                        <td>Apply borders but not on one side. The $not parameter can be : <code>top, bottom, left, right</code></td>
+                      </tr>
+                      <tr class="info">
+                        <td>Graphic</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin square()</td>
+                        <td>$size, $color</td>
+                        <td>create a square by adding its dimensions and colors.</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin square-gradient()</td>
+                        <td>$size, $angle, $color-1, $color-2</td>
+                        <td>create a square by adding its dimensions and you have to specify a rotation angle for the gradient.</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin circle()</td>
+                        <td>$size, $color</td>
+                        <td>create a circle by adding its dimensions and colors.</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin circle-gradient()</td>
+                        <td>$size, $angle, $color-1, $color-2</td>
+                        <td>create a circle by adding its dimensions and you have to specify a rotation angle for the gradient.</td>
+                      </tr>
+                      <tr class="info">
+                        <td>Backgrounds</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin full-background()</td>
+                        <td>$fallback-color, $url</td>
+                        <td>Create a full centered cover background even on resize, you need to specify a fallback color.</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin contain-background()</td>
+                        <td>$fallback-color, $url</td>
+                        <td>Create a centered and contain background, you need to specify a fallback color</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin icon-background()</td>
+                        <td>$url</td>
+                        <td>A straight to the point way to add an icon as a background. </td>
+                      </tr>
+                      <tr class="info">
+                        <td>Box shadows</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin inset-shadow()</td>
+                        <td>$size-1, $color-1, $size-2, $color-2</td>
+                        <td>Add to a an element to create an inset effect, you have to define the size and colors.</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin outset-shadow()</td>
+                        <td>$size-1, $color-1, $size-2, $color-2</td>
+                        <td>Add to a an element to create an outset effect, you have to define the size and colors.</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin inset-shadow-simple()</td>
+                        <td>0</td>
+                        <td>Add to a an element to create an inset effect, simple effect, no parameters needed.</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin outset-shadow-simple()</td>
+                        <td>0</td>
+                        <td>Add to a an element to create an outset effect, simple effect, no parameters needed.</td>
+                      </tr>
+                      <tr class="info">
+                        <td>Text shadows</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-b()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a bottom text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-t()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a top text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-r()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a right text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-l()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a left text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-br()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a bottom right text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-bl()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a bottom left text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-tr()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a top right text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr>
+                        <td>@mixin shadow-text-tl()</td>
+                        <td>$color-background, $color-shadow</td>
+                        <td>This mixin create a top left text shadow. The $color-background attribute may have the same color value as the container</td>
+                      </tr>
+                      <tr class="info">
+                        <td>Other</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>@mixin single-element()</td>
+                        <td>0</td>
+                        <td>Basic setting to use with a :before/:after pseudo class to extend a basic element</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </section>
-              </li>
-               <li>
                 <section>
-                   <header>
-                    <h2>Fonts</h2>
-                  </header>
-                  <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
-                  </article>
+                <h3>Usage</h3>
+                  <p>To use a mixin simply call it with its parameters : </p>
+
+                <pre><code>div{
+  @include square(5em, red);
+  @include outset-shadow-simple();
+  @include shadow-text-b($bg-color, black);
+  @include border-right-radius(30px);
+  @include transition(all .3s ease);
+
+  &:hover{
+    @include square-gradient(5em, 45deg, #663399, $color-theme);
+    @include inset-shadow-simple();
+    @include border-right-radius(0px);
+    @include border-left-radius(30px);
+  }
+}</code></pre>
+
+                <div class="mixin-result">
+                  <div><span>Result</span></div>
+                </div>
                 </section>
-              </li>
-               <li>
-                <section>
-                   <header>
-                    <h2>Colors</h2>
-                  </header>
-                   <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
-                  </article>
-                </section>
-              </li>
-            </ul>
           </article>
         </section>
       </div>
 
       <!-- Naming-conventions -->
-      <div class="col-md-12 naming-conventions">
+      <div class="col-md-12 naming-conventions" id="namingconventions">
         <section>
           <header><h2>Naming Conventions</h2></header>
           <article>
           <ul class="nav nav-pills">
+            <li> <strong>For :</strong> </li>
             <li>
-              <a href="#">Paths</a>
+              <a href="#">Variables</a>
             </li>
             <li>
-              <a href="#">Fonts</a>
+              <a href="#">Typography</a>
             </li>
             <li>
-              <a href="#">Colors</a>
+              <a href="#">Images</a>
+            </li>
+            <li>
+              <a href="#">Icons</a>
             </li>
           </ul>
 
@@ -212,30 +494,196 @@
               <li>
                 <section>
                   <header>
-                    <h2>Path</h2>
+                    <h2>Variables</h2>
                   </header>
                     <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>The variables names have to be clear, and to describe things clearly, to ensure clarity and efficacity.</p>
+                    <p>For example, you want to use a red color, so proceed like the following : </p>
+                    <pre><code>$red: #f00;</code></pre>
+                    <p>Well, now you want some different tints of your color : </p>
+                    <pre><code>$red: #f00;
+$dark-red: darken($red, 10%);
+$light-red: lighten($red, 10%);</code></pre>
+                    <p>Pretty logic and simple, and in a last effort, we want to minify them, to make the variables available as shortcuts :</p>
+<pre><code>$red: #f00;
+$dark-red: darken($red, 10%);
+$light-red: lighten($red, 10%);
+
+//Shortcuts
+$r: $red;
+$dr: $dark-red;
+$lr: $light-red</code></pre>
+                  <p>And thats it ! Follow this naming conventions rules, and you will use EfficaCSS at its climax !</p>
                   </article>
                 </section>
               </li>
                <li>
                 <section>
                    <header>
-                    <h2>Fonts</h2>
+                    <h2>Typography</h2>
                   </header>
                   <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>If you are using custom fonts, make sure to properly name your folder, and your fonts.</p>
+                    <p>You may have different versions of your font, like the <strong>Light</strong>, <strong>Regular</strong>, <strong>Semibold</strong> and <strong>Bold</strong> versions. <br/>
+                    Good news ! Because with EfficaCSS we've made it simple to manage ! And it's located in the <code>_typography.scss</code> file.</p>
+                    <pre><code>$versions: 'Regular','Light','Bold','Semibold';
+@each $version in $versions{
+  @include font($font-directory, $font-name+'-'+$version);
+}</code></pre>
+
+                    <p>As you can see, to import a font into your website, you just have to write these lines, and the framework handle everything else. </p>
+                    <h3>How to name a font</h3>
+                    <p>To make a font properly working, the project organisation is important, and the names are too.</p>
+                    <p>Let's say you want to use your own font called <strong>MyFont</strong>, you have to :</p>
+                    <h3>Name it properly</h3>
+                     <p>So You have a font called <strong>MyFont</strong>, and you have all the font versions, give them the <strong>same name</strong> and add <code>-&lt;version&gt;</code>.</p>
+                     <p>For a basic example, you want to use these versions : <strong>Light</strong>, <strong>Regular</strong>, <strong>Semibold</strong> and <strong>Bold</strong></p>
+                     <pre><code>/Myfont/
+  |
+  | MyFont-Light.ttf[.woff, .eot, .otf, .svg]
+  |
+  | MyFont-Regular.ttf[.woff, .eot, .otf, .svg]
+  |
+  | MyFont-Bold.ttf[.woff, .eot, .otf, .svg]
+  |
+  | MyFont-Semibold.ttf[.woff, .eot, .otf, .svg]</code></pre>
+
+                      <h3>Add it to the framework</h3>
+
+                      <ul>
+                        <li><p><span>1</span> : Create a folder called <strong>MyFont</strong> in <code>assets/fonts/</code></p></li>
+                      <li><p><span>2</span> : Place your <strong>.ttf, .woff, .eot, .otf, .svg</strong> font files in <code>assets/fonts/<strong>MyFont</strong></code></p></li>
+                      <li><p><span>3</span> : Open <code>_variables.scss</code></p></li>
+                      <li><p><span>4</span> : Add a new variable <code>$MyFont-name</code></p></li>
+                      <li><p><span>5</span> : Create a new path <code>$MyFont-directory: $path-fonts + $MyFont-name + "/";</code></p></li>
+                      <li><p><span>6</span> : And finally, open your <code>_typography.scss</code> file and add the following code :</p></li>
+                    </ul>
+                    <pre><code>$versions: 'Regular','Light','Bold','Semibold';
+@each $version in $versions{
+  @include font($MyFont-directory, $MyFont-name+'-'+$version);
+}</code></pre>
+                    <p>And your font is now imported.</p>
                   </article>
                 </section>
               </li>
                <li>
                 <section>
                    <header>
-                    <h2>Colors</h2>
+                    <h2>Images</h2>
                   </header>
                    <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>You may want to use a set of images, maybe extracted from a png (or any other images extension) gallery, As the font, everything is managed by a proper name setting. </p>
+
+                     <h3>Create an image gallery</h3>
+                    <p>You have a folder with, all your holiday pictures, and you want to show some on your website, name your folder <strong>my_holidays_2014</strong>, go to the folder <code>assets/images</code>, and add your <code>my_holidays_2014</code> folder in it.</p>
+
+                    <p>In this folder, add all your pictures and give them a prefix <code>holidays_2014_</code> for example.</p>
+                    <pre><code>images/my_holidays_2014/
+              |
+              | holidays_2014_The_beach.png
+              |
+              | holidays_2014_The_hotel.png
+              |
+              | holidays_2014_Sunset.png
+              |
+              | holidays_2014_Safari.png
+              |
+              | holidays_2014_Mountain.png</code></pre>
+
+                  <p>Its time to create a path for this gallery, go to <code>assets/css/base/</code> open <code>_variables.scss</code> and add </p>
+                    <pre><code>$path-gallery-2014: $path-img + 'my_holidays/';</code></pre>
+                    <p> so your file will look like this :</p>
+                    <pre><code>$root: '../';
+
+$path-css: $root + 'css/';
+$path-js: $root + 'js/';
+$path-fonts: $root + 'fonts/';
+$path-img: $root + 'images/';
+
+$path-gallery-2014: $path-img + 'my_holidays/';
+</code></pre>
+
+                  <p>After that, you just have to open your <code>_images.scss</code> file, and add your gallery : </p>
+                  <pre><code>.gallery-item{
+  display: block;
+  @include square(6em);
+}
+
+$prefix-gallery: 'holidays_2014_';
+$extension-image: '.png';
+$scenes: "The_beach", "The_hotel", "Sunset","Safari", "Mountain";
+
+@each $scene in $scenes {
+  .gallery-item{
+    &[class*="gallery-#{($scene)}"]{
+        @include full-background(#ccc'#{($path-gallery-2014)} + #{($prefix-gallery)} + #{($scene)} + #{($extension-image)}');
+    }
+  }
+}</code></pre>
+                  </article>
+                </section>
+              </li>
+              <li>
+                <section>
+                   <header>
+                    <h2>Icons</h2>
+                  </header>
+                   <article>
+                    <p>You have some cool icons and you want to use them on your website, EfficaCSS can help you !</p>
+
+                    <h3>Create a custom icons set with EfficaCSS</h3>
+                    <p>If your SVG gallery have a name like <strong>svg_iconset</strong>, go to the folder <code>assets/images</code>, and add a new folder and name it <code>svg</code> and in this folder, create an other folder <code>svg_iconset</code></p>
+
+                    <p>In this folder, you will upload all your icons, with the same exact prefix <code>icon_</code>.</p>
+                    <pre><code>images/svg/svg_iconset/
+              |
+              | icon_check.svg
+              |
+              | icon_user.svg
+              |
+              | icon_home.svg
+              |
+              | icon_cancel.svg
+              |
+              | icon_share.svg</code></pre>
+
+                    <p>Now create a path of your new icon set, go to <code>assets/css/base/</code> and open <code>_variables.scss</code> and add </p>
+                    <pre><code>$path-svg: $path-images + 'svg/';
+$path-icons: $path-svg + 'svg_iconset/';</code></pre>
+                    <p> so your file will look like this :</p>
+                    <pre><code>$root: '../';
+
+$path-css: $root + 'css/';
+$path-js: $root + 'js/';
+$path-fonts: $root + 'fonts/';
+$path-img: $root + 'images/';
+
+$path-svg: $path-images + 'svg/';
+$path-icons: $path-svg + 'svg_iconset/';
+</code></pre>
+                    <p>Once you've done with it, go to <code>assets/css/base/</code> and open <code>_icons.scss</code>.</p>
+                    <p>Then add :</p>
+                    <pre><code>.ico{
+  display: block;
+  &:before{
+    @include single-element();
+    @include square(1.2em);
+  }
+}
+
+$prefix-icon: 'icon_';
+$extension-icon: '.svg';
+$icons: "check", "user", "home","cancel", "share";
+
+@each $icon in $icons {
+  .ico{
+    &[class*="ico-#{($icon)}"]{
+      &:before{
+        @include icon-background('#{($path-icons)} + #{($prefix-icon)} + #{($icon)} + #{($extension-icon)}');
+      }
+    }
+  }
+}</code></pre>
                   </article>
                 </section>
               </li>
@@ -243,7 +691,7 @@
           </article>
         </section>
       </div>
-      <!-- Download -->
+      <!-- Download
       <div class="col-md-12 examples">
         <section>
         <header>
@@ -274,9 +722,9 @@
             </div>
           </article>
         </section>
-      </div>
+      </div>-->
       <!-- Download -->
-      <div class="col-md-12 download">
+      <div class="col-md-12 download" id="download">
         <section>
           <article>
             <div class="col-md-12">
@@ -297,8 +745,9 @@
     <script src="assets/js/retina.min.js"></script>
     <script src="assets/js/functions.js"></script>
 
+<script> hljs.initHighlightingOnLoad();</script>
 
-   <script src="assets/js/debug.js" id="debugger"></script>
+<!--   <script src="assets/js/debug.js" id="debugger"></script> -->
 
     <script>
    </script>

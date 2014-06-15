@@ -2166,7 +2166,8 @@ p {
 
 .navbar-fixed-top.inv {
   background: #0f73a6;
-  padding-bottom: 1em; }
+  padding-bottom: 1em;
+  border-bottom: 0.2em solid #eebd2b; }
 
 /* Jumbotron
 -----------------------------------------------------------------------*/

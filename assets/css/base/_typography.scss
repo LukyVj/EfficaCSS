@@ -2,11 +2,10 @@
  OVCSS Typographic settings :
 ========================================================================== */
 
-@include font($font-directory, $font-name+'-Regular');
-@include font($font-directory, $font-name+'-Light');
-@include font($font-directory, $font-name+'-Bold');
-@include font($font-directory, $font-name+'-Semibold');
-
+$versions: 'Regular','Light','Bold','Semibold';
+@each $version in $versions{
+  @include font( $font-directory, $font-name + '-' + $version);
+}
 
 
 /* Typographic media queries */

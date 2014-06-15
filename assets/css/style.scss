@@ -368,3 +368,31 @@ p{
     }
   }
 }
+
+
+/* Features
+----------------------------------------------------------------------------*/
+/* Mixin result
+---------------------------------------------------------------------*/
+.mixin-result{
+  text-align: center;
+  line-height: 5em;
+  span{
+      line-height: 5em;
+  }
+
+  div{
+    @include square(5em, red);
+    @include outset-shadow-simple();
+    @include shadow-text-b($ct, black);
+    @include border-right-radius(30px);
+    @include transition(all .3s ease);
+
+    &:hover{
+      @include square-gradient(5em, 45deg, #663399, $color-theme);
+      @include inset-shadow-simple();
+      @include border-right-radius(0px);
+      @include border-left-radius(30px);
+    }
+  }
+}

@@ -433,10 +433,22 @@ $ct: $color-theme;
 
                 <pre><code>div{
   @include square(5em, red);
-  @include outset-shadow();
+  @include outset-shadow-simple();
   @include shadow-text-b($bg-color, black);
   @include border-right-radius(30px);
+  @include transition(all .3s ease);
+
+  &:hover{
+    @include square-gradient(5em, 45deg, #663399, $color-theme);
+    @include inset-shadow-simple();
+    @include border-right-radius(0px);
+    @include border-left-radius(30px);
+  }
 }</code></pre>
+
+                <div class="mixin-result">
+                  <div><span>Result</span></div>
+                </div>
                 </section>
           </article>
         </section>
@@ -503,17 +515,27 @@ $lr: $light-red</code></pre>
                     <p>If you are using custom fonts, make sure to properly name your folder, and your fonts.</p>
                     <p>You may have different versions of your font, like the <strong>Light</strong>, <strong>Regular</strong>, <strong>Semibold</strong> and <strong>Bold</strong> versions. <br/>
                     Good news ! Because with EfficaCSS we've made it simple to manage ! And it's located in the <code>_typography.scss</code> file.</p>
-                    <pre><code>@include font($font-directory, $font-name+'-Regular');
-@include font($font-directory, $font-name+'-Light');
-@include font($font-directory, $font-name+'-Bold');
-@include font($font-directory, $font-name+'-Semibold');</code></pre>
+                    <pre><code>$versions: 'Regular','Light','Bold','Semibold';
+@each $version in $versions{
+  @include font($font-directory, $font-name+'-'+$version);
+}</code></pre>
 
                     <p>As you can see, to import a font into your website, you just have to write these lines, and the framework handle everything else. </p>
                     <h3>How to name a font</h3>
                     <p>To make a font properly working, the project organisation is important, and the names are too.</p>
                     <p>Let's say you want to use your own font called <strong>MyFont</strong>, you have to :</p>
                     <h3>Name it properly</h3>
-                     <p>So You have a font called <strong>MyFont</strong></p>
+                     <p>So You have a font called <strong>MyFont</strong>, and you have all the font versions, give them the <strong>same name</strong> and add <code>-&lt;version&gt;</code>.</p>
+                     <p>For a basic example, you want to use these versions : <strong>Light</strong>, <strong>Regular</strong>, <strong>Semibold</strong> and <strong>Bold</strong></p>
+                     <pre><code>/Myfont/
+  |
+  | MyFont-Light.ttf[.woff, .eot, .otf, .svg]
+  |
+  | MyFont-Regular.ttf[.woff, .eot, .otf, .svg]
+  |
+  | MyFont-Bold.ttf[.woff, .eot, .otf, .svg]
+  |
+  | MyFont-Semibold.ttf[.woff, .eot, .otf, .svg]</code></pre>
 
                       <h3>Add it to the framework</h3>
 

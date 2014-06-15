@@ -13,4 +13,4 @@ Visit : [http://lukyvj.github.io/EfficaCSS/](http://lukyvj.github.io/EfficaCSS/)
 
 # Download
 
-[http://lukyvj.github.io/EfficaCSS/framework/efficacss-1.0.zip](http://lukyvj.github.io/EfficaCSS/framework/efficacss-1.0.zip)
+[http://lukyvj.github.io/EfficaCSS/efficacss-1.0.zip](http://lukyvj.github.io/EfficaCSS/efficacss-1.0.zip)

@@ -7,6 +7,10 @@ A set of SASS &amp; Bourbon mixins to power up your stylesheets And to provide y
 Visit : [http://lukyvj.github.io/EfficaCSS/](http://lukyvj.github.io/EfficaCSS/)
 
 
-# Demo 
+# Demo
 
-I'll upload a demo page soon.
+[http://lukyvj.github.io/EfficaCSS/framework/](http://lukyvj.github.io/EfficaCSS/framework)
+
+# Download
+
+[http://lukyvj.github.io/EfficaCSS/efficacss-1.0.zip](http://lukyvj.github.io/EfficaCSS/efficacss-1.0.zip)

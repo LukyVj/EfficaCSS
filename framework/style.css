@@ -1,0 +1,386 @@
+@charset "UTF-8";
+/*! OVCSS - EfficaCSS v1.0.1 | MIT License | http://lucasbonomi.com/MIT */
+/*
+ * The following stylesheet is the main style.scss of your new OVCSS - EfficaCSS project.
+ * The stylesheet uses normalize (http://necolas.github.io/normalize.css/) &
+ * bourbon (http://bourbon.io/).
+ *
+ */
+/* ==========================================================================
+ Base importations :
+ ========================================================================== */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden], template {
+  display: none; }
+
+a {
+  background: transparent; }
+
+a:active, a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code, kbd, pre, samp {
+  font-family: monospace,monospace;
+  font-size: 1em; }
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button, select {
+  text-transform: none; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+ /* ==========================================================================
+  OVCSS Settings library :
+
+  Settings to use with EfficaCSS
+  http://lukyvj.github.io/EfficaCSS
+ ========================================================================== */
+/* ==========================================================================
+   OVCSS Functions library :
+   Functions to use with EfficaCSS
+   http://lukyvj.github.io/EfficaCSS
+========================================================================== */
+/* font var
+-----------------------------------------------------*/
+ /* ====================================================================================================
+    Mixins for EfficaCSS
+======================================================================================================*/
+/* Start mixins, reset ect
+-------------------------------------------------------------------*/
+/* Font settings
+-------------------------------------------------------------------*/
+/* Font-face
+------------------------------------------*/
+/* regular font management
+----------------------------------------------------------------------*/
+/* Helper : Border-radius
+-------------------------------------------------------------------*/
+/* borders
+-----------------------------------------------------------------*/
+/* single element
+-----------------------------------------------------------------*/
+/* Square
+------------------------------------------------------------------*/
+/* Backgrounds
+------------------------------------------------------------------*/
+/* Shadow effects
+-------------------------------------------------------------------*/
+/* Inset outset blocks
+--------------------------------------------------------------------*/
+/* Text-shadows [ b = bottom, t = top, r = right, l = left ]
+---------------------------------------------------------------------*/
+/* Single elements
+--------------------------------------------------------------------*/
+/* Grid
+---------------------------------------------------------------*/
+/* ==========================================================================
+ OVCSS Typographic settings :
+========================================================================== */
+@font-face {
+  font-family: MyAwesomeFont-Regular;
+  src: url("../fonts/MyAwesomeFont/MyAwesomeFont-Regular.eot?") format("eot"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Regular.woff") format("woff"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Regular.svg#MyAwesomeFont-Regular") format("svg"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: MyAwesomeFont-Light;
+  src: url("../fonts/MyAwesomeFont/MyAwesomeFont-Light.eot?") format("eot"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Light.woff") format("woff"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Light.svg#MyAwesomeFont-Light") format("svg"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: MyAwesomeFont-Bold;
+  src: url("../fonts/MyAwesomeFont/MyAwesomeFont-Bold.eot?") format("eot"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Bold.woff") format("woff"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Bold.svg#MyAwesomeFont-Bold") format("svg"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: MyAwesomeFont-Semibold;
+  src: url("../fonts/MyAwesomeFont/MyAwesomeFont-Semibold.eot?") format("eot"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Semibold.woff") format("woff"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Semibold.svg#MyAwesomeFont-Semibold") format("svg"), url("../fonts/MyAwesomeFont/MyAwesomeFont-Semibold.ttf") format("truetype"); }
+/* Typographic media queries */
+@media all and (max-width: 40em) {
+  html, body {
+    line-height: 22px; } }
+@media all and (max-width: 60em) {
+  html, body {
+    line-height: 24px; } }
+ /* ====================================================================================================
+    Basic icons stylesheet : Here you define the style of your icons
+======================================================================================================*/
+.ico {
+  display: block; }
+  .ico:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    background: transparent; }
+
+.ico[class*="ico-check"]:before {
+  background: url("../images/svg/svg_iconset/ + icon_ + check + .svg") no-repeat center center;
+  background-size: contain; }
+
+.ico[class*="ico-user"]:before {
+  background: url("../images/svg/svg_iconset/ + icon_ + user + .svg") no-repeat center center;
+  background-size: contain; }
+
+.ico[class*="ico-home"]:before {
+  background: url("../images/svg/svg_iconset/ + icon_ + home + .svg") no-repeat center center;
+  background-size: contain; }
+
+.ico[class*="ico-cancel"]:before {
+  background: url("../images/svg/svg_iconset/ + icon_ + cancel + .svg") no-repeat center center;
+  background-size: contain; }
+
+.ico[class*="ico-share"]:before {
+  background: url("../images/svg/svg_iconset/ + icon_ + share + .svg") no-repeat center center;
+  background-size: contain; }
+
+ /* ====================================================================================================
+    Basic images stylesheet : Here you define the style of your images
+======================================================================================================*/
+.gallery-item {
+  display: block;
+  width: 6em;
+  height: 6em;
+  background: transparent; }
+
+.gallery-item[class*="gallery-The_beach"] {
+  background: #cccccc url("../images/my_holidays/ + holidays_2014_ + The_beach + .png") no-repeat center center;
+  background-size: cover; }
+
+.gallery-item[class*="gallery-The_hotel"] {
+  background: #cccccc url("../images/my_holidays/ + holidays_2014_ + The_hotel + .png") no-repeat center center;
+  background-size: cover; }
+
+.gallery-item[class*="gallery-Sunset"] {
+  background: #cccccc url("../images/my_holidays/ + holidays_2014_ + Sunset + .png") no-repeat center center;
+  background-size: cover; }
+
+.gallery-item[class*="gallery-Safari"] {
+  background: #cccccc url("../images/my_holidays/ + holidays_2014_ + Safari + .png") no-repeat center center;
+  background-size: cover; }
+
+.gallery-item[class*="gallery-Mountain"] {
+  background: #cccccc url("../images/my_holidays/ + holidays_2014_ + Mountain + .png") no-repeat center center;
+  background-size: cover; }
+
+/* ====================================================================================================
+Colors : Here you define your color palette & colorscheme, we defined some fresh colors for you
+======================================================================================================*/
+/* Shortcuts
+--------------------------------------------------------------------------------------------------*/
+/* Theme
+--------------------------------------------------------------------------------------------------*/
+/* ====================================================================================================
+Buttons : Here is the main buttons stylesheet
+======================================================================================================*/
+/* ====================================================================================================
+Classes : This library could be named helpers.css, here you will find all technical classes
+(ex : .hide, .clearfix, .fix )
+======================================================================================================*/
+/* clearfix
+-------------------------------------------*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* Hide
+-------------------------------------------*/
+.hide {
+  display: none;
+  opacity: 0;
+  visibility: hidden; }
+
+ /* ====================================================================================================
+Basic form stylesheet : Here you define the basic style of your forms
+======================================================================================================*/
+form input {
+  outline: none; }
+  form input::-webkit-input-placeholder {
+    color: black; }
+  form input::-moz-placeholder {
+    color: black; }
+  form input:-moz-placeholder {
+    color: black; }
+  form input:-ms-input-placeholder {
+    color: black; }
+
+/* ====================================================================================================
+  Animations : Define CSS3 keyframes animations
+======================================================================================================*/
+@-webkit-keyframes animation-name {}
+@-moz-keyframes animation-name {}
+@keyframes animation-name {}
+/* ====================================================================================================
+Base : This stylesheet will be your base, you will define the main lines of your project stylesheet.
+======================================================================================================*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+  line-height: 32px; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  float: left;
+  font-family: MyAwesomeFont-light, "Helvetica", sans-serif; }
+
+html {
+  overflow-x: hidden; }
+
+strong {
+  font-family: MyAwesomeFont-semibold, "Helvetica", sans-serif;
+  font-weight: bold; }
+
+ /*
+
+  If it’s a hack, it goes in shame.css.
+  Document all hacks fully:
+  What part of the codebase does it relate to?
+  Why was this needed?
+  How does this fix it?
+  How might you fix it properly, given more time?
+  Do not blame the developer; if they explained why they had to do it then their reasons are probably (hopefully) valid.
+  Try and clean shame.css up when you have some down time.
+  Even better, get a tech-debt story in which you can dedicate actual sprint time to it.
+
+*/
+/* ====================================================================================================
+    Debug file, to add and edit when you debug your project
+
+    To activate the debug, just add a data-debug attribute to the HTML element <html data-debug="true">
+======================================================================================================*/
+html[data-debug="true"] a {
+  color: red; }
+html[data-debug="true"] img {
+  border: 1px solid yellow; }
+
+/* ==========================================================================
+ Main style of your project  :
+ ========================================================================== */

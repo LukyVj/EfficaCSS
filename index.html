@@ -28,6 +28,9 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 <div class="background-navbar"></div>
   <div class="container">
+  <span class="logo">
+    <h1>Effica{CSS}</h1>
+  </span>
     <ul class="nav nav-pills nav-top">
       <li class="active"><a href="#home">Home</a></li>
       <li><a href="#download">Download</a></li>
@@ -79,7 +82,7 @@
               <div class="col-md-1 cont-icon"><i class="fa fa-chevron-down"></i></div>
 
               <div class="col-md-8">
-                <a href="http://bourbon.io">OVCSS</a>
+                <a href="http://lukyvj.github.io/OVCSS">OVCSS</a>
               </div>
           </article>
         </section>
@@ -94,13 +97,13 @@
           <article>
             <ul class="nav nav-pills">
             <li>
-              <a href="#" data-target="path">Paths</a>
+              <a href="#path" data-target="path">Paths</a>
             </li>
             <li>
-              <a href="#" data-target="fonts">Fonts</a>
+              <a href="#fonts" data-target="fonts">Fonts</a>
             </li>
             <li>
-              <a href="#" data-target="colors">Colors</a>
+              <a href="#colors" data-target="colors">Colors</a>
             </li>
             </ul>
 
@@ -109,7 +112,7 @@
             </section>
 
             <ul>
-              <li class="section-path">
+              <li class="section-path" id="path">
                 <section>
                   <header>
                     <h2>Path</h2>
@@ -146,7 +149,7 @@ $path-img: $root + 'images/';</code></pre>
                   </article>
                 </section>
               </li>
-               <li class="section-fonts">
+               <li class="section-fonts" id="fonts">
                 <section>
                    <header>
                     <h2>Fonts</h2>
@@ -161,7 +164,7 @@ $font-directory: $path-fonts + "ProximaNova/";
                   </article>
                 </section>
               </li>
-               <li class="section-colors">
+               <li class="section-colors" id="colors">
                 <section>
                    <header>
                     <h2>Colors</h2>
@@ -473,16 +476,16 @@ $ct: $color-theme;
           <ul class="nav nav-pills">
             <li> <strong>For :</strong> </li>
             <li>
-              <a href="#">Variables</a>
+              <a href="#variables">Variables</a>
             </li>
             <li>
-              <a href="#">Typography</a>
+              <a href="#typography">Typography</a>
             </li>
             <li>
-              <a href="#">Images</a>
+              <a href="#images">Images</a>
             </li>
             <li>
-              <a href="#">Icons</a>
+              <a href="#icons">Icons</a>
             </li>
           </ul>
 
@@ -491,7 +494,7 @@ $ct: $color-theme;
             </section>
 
             <ul>
-              <li>
+              <li id="variables">
                 <section>
                   <header>
                     <h2>Variables</h2>
@@ -517,7 +520,7 @@ $lr: $light-red</code></pre>
                   </article>
                 </section>
               </li>
-               <li>
+               <li id="typography">
                 <section>
                    <header>
                     <h2>Typography</h2>
@@ -566,7 +569,7 @@ $lr: $light-red</code></pre>
                   </article>
                 </section>
               </li>
-               <li>
+               <li id="images">
                 <section>
                    <header>
                     <h2>Images</h2>
@@ -606,7 +609,7 @@ $path-gallery-2014: $path-img + 'my_holidays/';
                   <p>After that, you just have to open your <code>_images.scss</code> file, and add your gallery : </p>
                   <pre><code>.gallery-item{
   display: block;
-  @include square(6em);
+  @include square(6em, transparent);
 }
 
 $prefix-gallery: 'holidays_2014_';
@@ -616,14 +619,14 @@ $scenes: "The_beach", "The_hotel", "Sunset","Safari", "Mountain";
 @each $scene in $scenes {
   .gallery-item{
     &[class*="gallery-#{($scene)}"]{
-        @include full-background(#ccc'#{($path-gallery-2014)} + #{($prefix-gallery)} + #{($scene)} + #{($extension-image)}');
+        @include full-background(#ccc, '#{($path-gallery-2014)} + #{($prefix-gallery)} + #{($scene)} + #{($extension-image)}');
     }
   }
 }</code></pre>
                   </article>
                 </section>
               </li>
-              <li>
+              <li id="icons">
                 <section>
                    <header>
                     <h2>Icons</h2>
@@ -658,7 +661,7 @@ $path-js: $root + 'js/';
 $path-fonts: $root + 'fonts/';
 $path-img: $root + 'images/';
 
-$path-svg: $path-images + 'svg/';
+$path-svg: $path-img + 'svg/';
 $path-icons: $path-svg + 'svg_iconset/';
 </code></pre>
                     <p>Once you've done with it, go to <code>assets/css/base/</code> and open <code>_icons.scss</code>.</p>
@@ -667,7 +670,7 @@ $path-icons: $path-svg + 'svg_iconset/';
   display: block;
   &:before{
     @include single-element();
-    @include square(1.2em);
+    @include square(1.2em, transaprent);
   }
 }
 
@@ -691,38 +694,6 @@ $icons: "check", "user", "home","cancel", "share";
           </article>
         </section>
       </div>
-      <!-- Download
-      <div class="col-md-12 examples">
-        <section>
-        <header>
-          <h2>Examples</h2>
-        </header>
-          <article>
-            <div class="col-md-12">
-              <ul class="nav nav-pills pills-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-              </ul>
-            </div>
-          </article>
-        </section>
-      </div>-->
       <!-- Download -->
       <div class="col-md-12 download" id="download">
         <section>

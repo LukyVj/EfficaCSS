@@ -1,0 +1,24 @@
+ /* ==========================================================================
+  OVCSS Settings library :
+
+  Settings to use with EfficaCSS
+  http://lukyvj.github.io/EfficaCSS
+ ========================================================================== */
+ /* ==========================================================================
+ OVCSS Settings library :
+ ========================================================================== */
+@import '_variables.scss';      // Define Main vars (root, path, ect)
+@import '_mixins.scss';         // Import the mixins.
+@import '_typography.scss';     // Import your typography stylesheet.
+@import '_grid.scss';           // Import your grid system.
+@import '_icons.scss';          // Import the icon fonts.
+@import '_images.scss';         // Import the images
+@import '_colors.scss';         // Import your colorscheme first.
+@import '_buttons.scss';        // Import the Buttons stylesheet ( After the colors, the typograhy).
+@import '_classes.scss';        // Import the Classes file.
+@import '_form.scss';           // Import the form stylesheet.
+@import '_animation.scss';      // Import the keyframes animations stylesheet.
+@import '_base.scss';           // Import your Base Stylesheet.
+@import '_shame.scss';          // If it's a hack, it goes in shame.css .
+
+@import '_debug.scss';          // Debugger

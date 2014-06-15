@@ -1,0 +1,21 @@
+/* ====================================================================================================
+Classes : This library could be named helpers.css, here you will find all technical classes
+(ex : .hide, .clearfix, .fix )
+======================================================================================================*/
+
+/* clearfix
+-------------------------------------------*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Hide
+-------------------------------------------*/
+.hide{
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}

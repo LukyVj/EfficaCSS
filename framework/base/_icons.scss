@@ -1,0 +1,27 @@
+ /* ====================================================================================================
+    Basic icons stylesheet : Here you define the style of your icons
+======================================================================================================*/
+
+// Icons class
+.ico{
+  display: block;
+  &:before{
+    @include single-element();
+    @include square(1.2em, transparent);
+  }
+}
+
+// Generate icons with EfficaCSS (http://lukyvj.github.io/EfficaCSS)
+$prefix-icon: 'icon_';
+$extension-icon: '.svg';
+$icons: "check", "user", "home","cancel", "share";
+
+@each $icon in $icons {
+  .ico{
+    &[class*="ico-#{($icon)}"]{
+      &:before{
+        @include icon-background('#{($path-icons)} + #{($prefix-icon)} + #{($icon)} + #{($extension-icon)}');
+      }
+    }
+  }
+}

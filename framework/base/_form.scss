@@ -1,0 +1,15 @@
+ /* ====================================================================================================
+Basic form stylesheet : Here you define the basic style of your forms
+======================================================================================================*/
+
+// Sample code, add your own
+$placeholder-color: #000;
+form {
+  input{
+    outline: none;
+     @include placeholder {
+       color: $placeholder-color;
+     }
+  }
+}
+

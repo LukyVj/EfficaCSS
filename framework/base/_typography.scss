@@ -1,0 +1,22 @@
+/* ==========================================================================
+ OVCSS Typographic settings :
+========================================================================== */
+
+$versions: 'Regular','Light','Bold','Semibold';
+@each $version in $versions{
+  @include font( $font-directory, $font-name + '-' + $version);
+}
+
+
+/* Typographic media queries */
+@media all and (max-width: 40em) {
+    html, body {
+        line-height: 22px;
+    }
+}
+
+@media all and (max-width: 60em) {
+    html, body {
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,25 @@
+ /* ====================================================================================================
+    Basic images stylesheet : Here you define the style of your images
+======================================================================================================*/
+
+// Icons class
+
+.gallery-item{
+  display: block;
+  @include square(6em, transparent);
+}
+
+
+// Generate images with EfficaCSS (http://lukyvj.github.io/EfficaCSS)
+
+$prefix-gallery: 'holidays_2014_';
+$extension-image: '.png';
+$scenes: "The_beach", "The_hotel", "Sunset","Safari", "Mountain";
+
+@each $scene in $scenes {
+  .gallery-item{
+    &[class*="gallery-#{($scene)}"]{
+        @include full-background(#ccc, '#{($path-gallery-2014)} + #{($prefix-gallery)} + #{($scene)} + #{($extension-image)}');
+    }
+  }
+}

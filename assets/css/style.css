@@ -2126,7 +2126,8 @@ html[data-debug="true"] body[data-debug-animation*="true"] * {
 body {
   background: #1393d5;
   color: #f3f3f5;
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  padding-bottom: 0; }
 
 pre,
 code {
@@ -2168,13 +2169,26 @@ p {
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease; }
+  .navbar-fixed-top .logo {
+    opacity: 0;
+    float: left;
+    width: 0; }
+    .navbar-fixed-top .logo h1 {
+      float: left;
+      width: 0;
+      font-size: 3em;
+      text-shadow: 0.035em 0.035em 0 #0f73a6, 0.065em 0.065em 0 rgba(11, 82, 119, 0.8); }
   .navbar-fixed-top.inv {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
     background: rgba(15, 115, 166, 0.8);
-    padding-bottom: 1em;
     border-bottom: 0.2em solid #eebd2b; }
+    .navbar-fixed-top.inv .logo {
+      opacity: 1;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
 
 /* Jumbotron
 -----------------------------------------------------------------------*/
@@ -2396,7 +2410,6 @@ p {
   position: relative;
   z-index: 1;
   height: 80px;
-  bottom: -1em;
   width: 100%;
   float: left; }
   .footer p {

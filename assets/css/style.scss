@@ -8,6 +8,7 @@ body {
   background: $ct;
   color: $w;
   font-size: 1.3em;
+  padding-bottom: 0;
 }
 pre,
 code{
@@ -55,10 +56,25 @@ p{
 
 .navbar-fixed-top{
   @include transition(all .4s ease);
+  .logo{
+    opacity: 0;
+    float: left;
+    width: 0;
+
+    h1{
+      float: left;
+      width: 0;
+      font-size: 3em;
+    @include shadow-text-br(darken($p, 10%), darken(rgba($ct, .8), 20%));
+    }
+  }
   &.inv{
+    .logo{
+      opacity: 1;
+      @include transition(all .3s ease);
+    }
   @include transition(all .3s ease);
   background: darken(rgba($b,.8), 10%);
-  padding-bottom: 1em;
   border-bottom: .2em solid $y;
   }
 }
@@ -368,7 +384,6 @@ p{
   position: relative;
   z-index: 1;
   height: 80px;
-  bottom: -1em;
   width: 100%;
   float: left;
 

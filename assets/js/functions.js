@@ -38,7 +38,7 @@ $(document).ready(function(){
  // Animate on scroll
   function animateScroll(){
         var $root = $('html:not(:animated), body:not(:animated)');
-    $('.navbar a').click(function() {
+    $('.navbar a, .summary li a, .nav li a').click(function() {
         $root.animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 800);
@@ -47,7 +47,7 @@ $(document).ready(function(){
 
   // Show active menu links
   function activeLinksTop(){
-    $menuLinks = $('.navbar li, .summary li'),
+    $menuLinks = $('.navbar li'),
     $menuLinkActive = $menuLinks.hasClass('active');
 
     $menuLinks.on('click', function(e){
@@ -58,21 +58,6 @@ $(document).ready(function(){
     })
   }
 
-function showCategories(){
-  var env = $('.container .col-md-12 ');
-  var targetLi = env.find('ul li[class*="section-"]');
-  var button = env.find('.nav-pills li a');
-  button.on('click', function(e){
-    e.preventDefault();
-
-    var $this = $(this);
-    var $name = $this.data('target');
-    var $targ = targetLi.hasClass($name);
-    targetLi.hasClass($name).fadeIn();
-
-    console.log($name)
-  });
-}
 
 
 
@@ -92,7 +77,6 @@ function headerScroll(){
   function deploy(){
     log.msg("Welcome on EfficaCSS, the powerful OCSS Framework.");
 
-    showCategories();
     animateScroll();
     activeLinksTop();
     headerScroll();

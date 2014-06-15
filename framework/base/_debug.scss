@@ -1,0 +1,20 @@
+/* ====================================================================================================
+    Debug file, to add and edit when you debug your project
+
+    To activate the debug, just add a data-debug attribute to the HTML element <html data-debug="true">
+======================================================================================================*/
+
+html[data-debug="true"]{
+
+
+  // Sample code, add your own
+
+  a{
+    color: red;
+  }
+  img{
+    border: 1px solid yellow;
+  }
+
+}
+

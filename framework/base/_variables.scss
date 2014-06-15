@@ -1,0 +1,28 @@
+ /* ==========================================================================
+    OVCSS Functions library :
+    Functions to use with EfficaCSS
+    http://lukyvj.github.io/EfficaCSS
+ ========================================================================== */
+
+$root: '../';
+
+$path-css: $root + 'css/';
+$path-js: $root + 'js/';
+$path-fonts: $root + 'fonts/';
+$path-img: $root + 'images/';
+$path-svg: $path-img + 'svg/';
+$path-icons: $path-svg + 'svg_iconset/';
+
+$path-gallery-2014: $path-img + 'my_holidays/';
+
+
+/* font var
+-----------------------------------------------------*/
+
+$font-name: "MyAwesomeFont";
+$font-fallback: "Helvetica";
+
+$font-directory: $path-fonts + $font-name + "/";
+
+
+

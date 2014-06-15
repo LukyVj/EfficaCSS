@@ -76,12 +76,26 @@ function showCategories(){
 
 
 
+function headerScroll(){
+  var header = $('.navbar-fixed-top');
+  var heightJumbo = '160';
+  log.msg(heightJumbo)
+  $(document).on('scroll', function(e){
+    if($(window).scrollTop() > heightJumbo){
+      header.addClass('inv');
+    }else{
+            header.removeClass('inv');
+    }
+  })
+}
+
   function deploy(){
     log.msg("Welcome on EfficaCSS, the powerful OCSS Framework.");
 
     showCategories();
     animateScroll();
-    activeLinks();
+    activeLinksTop();
+    headerScroll();
   }
 
 

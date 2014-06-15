@@ -2164,6 +2164,10 @@ p {
       border-top: 1px dotted;
       color: #eebd2b; }
 
+.navbar-fixed-top.inv {
+  background: #0f73a6;
+  padding-bottom: 1em; }
+
 /* Jumbotron
 -----------------------------------------------------------------------*/
 .jumbotron {
@@ -2173,7 +2177,6 @@ p {
   background-attachment: fixed;
   text-align: center;
   position: relative;
-  z-index: 1;
   margin-bottom: 0; }
   .jumbotron h1 {
     font-size: 4em;

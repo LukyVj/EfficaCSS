@@ -53,6 +53,13 @@ p{
   }
 }
 
+.navbar-fixed-top{
+  &.inv{
+
+  background: darken($b, 10%);
+  padding-bottom: 1em;
+  }
+}
 /* Jumbotron
 -----------------------------------------------------------------------*/
 .jumbotron{
@@ -61,9 +68,7 @@ p{
   background-attachment: fixed;
   text-align: center;
   position: relative;
-  z-index: 1;
   margin-bottom: 0;
-
 
   h1{
 

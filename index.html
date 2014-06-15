@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/highlight.pack.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -549,12 +550,12 @@ $lr: $light-red</code></pre>
                       <h3>Add it to the framework</h3>
 
                       <ul>
-                        <li><span>1</span> : Create a folder called <strong>MyFont</strong> in <code>assets/fonts/</code></li>
-                      <li><span>2</span> : Place your <strong>.ttf, .woff, .eot, .otf, .svg</strong> font files in <code>assets/fonts/<strong>MyFont</strong></code></li>
-                      <li><span>3</span> : Open <code>_variables.scss</code></li>
-                      <li><span>4</span> : Add a new variable <code>$MyFont-name</code></li>
-                      <li><span>5</span> : Create a new path <code>$MyFont-directory: $path-fonts + $MyFont-name + "/";</code></li>
-                      <li><span>6</span> : And finally, open your <code>_typography.scss</code> file and add the following code :</li>
+                        <li><p><span>1</span> : Create a folder called <strong>MyFont</strong> in <code>assets/fonts/</code></p></li>
+                      <li><p><span>2</span> : Place your <strong>.ttf, .woff, .eot, .otf, .svg</strong> font files in <code>assets/fonts/<strong>MyFont</strong></code></p></li>
+                      <li><p><span>3</span> : Open <code>_variables.scss</code></p></li>
+                      <li><p><span>4</span> : Add a new variable <code>$MyFont-name</code></p></li>
+                      <li><p><span>5</span> : Create a new path <code>$MyFont-directory: $path-fonts + $MyFont-name + "/";</code></p></li>
+                      <li><p><span>6</span> : And finally, open your <code>_typography.scss</code> file and add the following code :</p></li>
                     </ul>
                     <pre><code>$versions: 'Regular','Light','Bold','Semibold';
 @each $version in $versions{
@@ -743,6 +744,7 @@ $icons: "check", "user", "home","cancel", "share";
     <script src="assets/js/retina.min.js"></script>
     <script src="assets/js/functions.js"></script>
 
+<script> hljs.initHighlightingOnLoad();</script>
 
 <!--   <script src="assets/js/debug.js" id="debugger"></script> -->
 

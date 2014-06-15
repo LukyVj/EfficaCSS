@@ -572,22 +572,25 @@ $lr: $light-red</code></pre>
                    <article>
                     <p>You may want to use a set of images, maybe extracted from a png (or any other images extension) gallery, As the font, everything is managed by a proper name setting. </p>
 
-                    <h3>Create a custom icons set</h3>
-                    <p>If your png gallery have a name like <strong>My_png_iconset</strong>, go to the folder <code>assets/images</code>, and add a new folder and name it <code>My_png_iconset</code></p>
+                     <h3>Create an image gallery</h3>
+                    <p>You have a folder with, all your holiday pictures, and you want to show some on your website, name your folder <strong>my_holidays_2014</strong>, go to the folder <code>assets/images</code>, and add your <code>my_holidays_2014</code> folder in it.</p>
 
-                    <p>In this folder, you will upload all your icons, with the same exact prefix <code>icon_</code>.</p>
-                    <pre><code>images/My_png_iconset/
+                    <p>In this folder, add all your pictures and give them a prefix <code>holidays_2014_</code> for example.</p>
+                    <pre><code>images/my_holidays_2014/
               |
-              | icon_check.png
+              | holidays_2014_The_beach.png
               |
-              | icon_user.png
+              | holidays_2014_The_hotel.png
               |
-              | icon_home.png
+              | holidays_2014_Sunset.png
               |
-              | icon_cancel.png
+              | holidays_2014_Safari.png
               |
-              | icon_share.png</code></pre>
-                    <p>Now create a path of your new icon set, go to <code>assets/css/base/</code> and open <code>_variables.scss</code> and add <code>$path-icons: $path-img + 'My_png_iconset/'</code> so your file will look like this :</p>
+              | holidays_2014_Mountain.png</code></pre>
+
+                  <p>Its time to create a path for this gallery, go to <code>assets/css/base/</code> open <code>_variables.scss</code> and add </p>
+                    <pre><code>$path-gallery-2014: $path-img + 'my_holidays/';</code></pre>
+                    <p> so your file will look like this :</p>
                     <pre><code>$root: '../';
 
 $path-css: $root + 'css/';
@@ -595,28 +598,23 @@ $path-js: $root + 'js/';
 $path-fonts: $root + 'fonts/';
 $path-img: $root + 'images/';
 
-$path-icons: $path-img + 'My_png_iconset/';
+$path-gallery-2014: $path-img + 'my_holidays/';
 </code></pre>
-                    <p>Once you've done with it, go to <code>assets/css/base/</code> and open <code>_icons.scss</code>.</p>
-                    <p>Then add :</p>
-                    <pre><code>.ico{
+
+                  <p>After that, you just have to open your <code>_images.scss</code> file, and add your gallery : </p>
+                  <pre><code>.gallery-item{
   display: block;
-  &:before{
-    @include single-element();
-    @include square(1.2em);
-  }
+  @include square(6em);
 }
 
-$prefix-icon: 'icon_';
-$extension-icon: '.png';
-$icons: "check", "user", "home","cancel", "share";
+$prefix-gallery: 'holidays_2014_';
+$extension-image: '.png';
+$scenes: "The_beach", "The_hotel", "Sunset","Safari", "Mountain";
 
-@each $icon in $icons {
-  .ico{
-    &[class*="ico-#{($icon)}"]{
-      &:before{
-        @include icon-background('#{($path-icons)} + #{($prefix-icon)} + #{($icon)} + #{($extensiont-icon)}');
-      }
+@each $scene in $scenes {
+  .gallery-item{
+    &[class*="gallery-#{($scene)}"]{
+        @include full-background(#ccc'#{($path-gallery-2014)} + #{($prefix-gallery)} + #{($scene)} + #{($extension-image)}');
     }
   }
 }</code></pre>
@@ -629,7 +627,61 @@ $icons: "check", "user", "home","cancel", "share";
                     <h2>Icons</h2>
                   </header>
                    <article>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, repudiandae iure veniam incidunt fuga maiores eos ipsa sint necessitatibus impedit. Voluptatum, laborum repellendus voluptas id neque ab doloremque aliquid animi!</p>
+                    <p>You have some cool icons and you want to use them on your website, EfficaCSS can help you !</p>
+
+                    <h3>Create a custom icons set with EfficaCSS</h3>
+                    <p>If your SVG gallery have a name like <strong>svg_iconset</strong>, go to the folder <code>assets/images</code>, and add a new folder and name it <code>svg</code> and in this folder, create an other folder <code>svg_iconset</code></p>
+
+                    <p>In this folder, you will upload all your icons, with the same exact prefix <code>icon_</code>.</p>
+                    <pre><code>images/svg/svg_iconset/
+              |
+              | icon_check.svg
+              |
+              | icon_user.svg
+              |
+              | icon_home.svg
+              |
+              | icon_cancel.svg
+              |
+              | icon_share.svg</code></pre>
+
+                    <p>Now create a path of your new icon set, go to <code>assets/css/base/</code> and open <code>_variables.scss</code> and add </p>
+                    <pre><code>$path-svg: $path-images + 'svg/';
+$path-icons: $path-svg + 'svg_iconset/';</code></pre>
+                    <p> so your file will look like this :</p>
+                    <pre><code>$root: '../';
+
+$path-css: $root + 'css/';
+$path-js: $root + 'js/';
+$path-fonts: $root + 'fonts/';
+$path-img: $root + 'images/';
+
+$path-svg: $path-images + 'svg/';
+$path-icons: $path-svg + 'svg_iconset/';
+</code></pre>
+                    <p>Once you've done with it, go to <code>assets/css/base/</code> and open <code>_icons.scss</code>.</p>
+                    <p>Then add :</p>
+                    <pre><code>.ico{
+  display: block;
+  &:before{
+    @include single-element();
+    @include square(1.2em);
+  }
+}
+
+$prefix-icon: 'icon_';
+$extension-icon: '.svg';
+$icons: "check", "user", "home","cancel", "share";
+
+@each $icon in $icons {
+  .ico{
+    &[class*="ico-#{($icon)}"]{
+      &:before{
+        @include icon-background('#{($path-icons)} + #{($prefix-icon)} + #{($icon)} + #{($extension-icon)}');
+      }
+    }
+  }
+}</code></pre>
                   </article>
                 </section>
               </li>

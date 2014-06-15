@@ -8,6 +8,8 @@ $path-js: $root + 'js/';
 $path-fonts: $root + 'fonts/';
 $path-img: $root + 'images/';
 
+$path-icons: $path-img + 'My_png_iconset/';
+
 /* font var
 -----------------------------------------------------*/
 
@@ -15,3 +17,6 @@ $font-name: "ProximaNova";
 $font-fallback: "Helvetica";
 
 $font-directory: $path-fonts + $font-name + "/";
+
+
+

@@ -7,6 +7,7 @@
 body {
   background: $ct;
   color: $w;
+  font-size: 1.3em;
 }
 pre,
 code{
@@ -21,6 +22,7 @@ code{
 pre {
     background: darken($ct, 18%);
     border: 1px solid darken($ct, 24%);
+      width: calc(100% - 1.4em);
 
  code{
   border: 0;
@@ -29,14 +31,12 @@ pre {
 }
 
 }
-a{
-  @include shadow-text-br($ct, rgba(black, .2));
-}
+
 ul.nav-pills li a{
   text-shadow: 0 0 0 ;
 }
 p{
-  font-size: 1.2em;
+  font-size: 1.5em;
   a{
     color: $y;
     border-bottom: 1px dotted;

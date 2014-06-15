@@ -1849,7 +1849,7 @@ Base : This stylesheet will be your base, you will define the main lines of your
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 500;
-  line-height: 24px; }
+  line-height: 32px; }
 
 html, body {
   width: 100%;
@@ -1860,7 +1860,6 @@ html, body {
   font-family: ProximaNova-light, "Helvetica", sans-serif; }
 
 html {
-  font-size: 29.1rem;
   overflow-x: hidden; }
 
 strong {
@@ -2029,7 +2028,8 @@ html[data-debug="true"] body[data-debug-animation*="true"] * {
  ========================================================================== */
 body {
   background: #1393d5;
-  color: #f3f3f5; }
+  color: #f3f3f5;
+  font-size: 1.3em; }
 
 pre,
 code {
@@ -2043,20 +2043,18 @@ code {
 
 pre {
   background: #0b5981;
-  border: 1px solid #094565; }
+  border: 1px solid #094565;
+  width: calc(100% - 1.4em); }
   pre code {
     border: 0;
     text-shadow: 0 0 0;
     background: transparent; }
 
-a {
-  text-shadow: 0.035em 0.035em 0 #1393d5, 0.065em 0.065em 0 rgba(0, 0, 0, 0.2); }
-
 ul.nav-pills li a {
   text-shadow: 0 0 0; }
 
 p {
-  font-size: 1.2em; }
+  font-size: 1.5em; }
   p a {
     color: #eebd2b;
     border-bottom: 1px dotted; }

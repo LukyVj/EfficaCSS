@@ -54,6 +54,7 @@ p{
 }
 
 .navbar-fixed-top{
+  @include transition(all .4s ease);
   &.inv{
   @include transition(all .3s ease);
   background: darken(rgba($b,.8), 10%);

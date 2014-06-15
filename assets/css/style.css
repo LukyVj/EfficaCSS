@@ -2164,13 +2164,17 @@ p {
       border-top: 1px dotted;
       color: #eebd2b; }
 
-.navbar-fixed-top.inv {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  background: rgba(15, 115, 166, 0.8);
-  padding-bottom: 1em;
-  border-bottom: 0.2em solid #eebd2b; }
+.navbar-fixed-top {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  .navbar-fixed-top.inv {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background: rgba(15, 115, 166, 0.8);
+    padding-bottom: 1em;
+    border-bottom: 0.2em solid #eebd2b; }
 
 /* Jumbotron
 -----------------------------------------------------------------------*/

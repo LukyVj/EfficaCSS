@@ -20,7 +20,7 @@ $icons: "check", "user", "home","cancel", "share";
   .ico{
     &[class*="ico-#{($icon)}"]{
       &:before{
-        @include icon-background('#{($path-icons)} + #{($prefix-icon)} + #{($icon)} + #{($extension-icon)}');
+        @include icon-background('#{($path-icons)}#{($prefix-icon)}#{($icon)}#{($extension-icon)}');
       }
     }
   }

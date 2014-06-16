@@ -619,7 +619,7 @@ $scenes: "The_beach", "The_hotel", "Sunset","Safari", "Mountain";
 @each $scene in $scenes {
   .gallery-item{
     &[class*="gallery-#{($scene)}"]{
-        @include full-background(#ccc, '#{($path-gallery-2014)} + #{($prefix-gallery)} + #{($scene)} + #{($extension-image)}');
+        @include full-background(#ccc, '#{($path-gallery-2014)}#{($prefix-gallery)}#{($scene)}#{($extension-image)}');
     }
   }
 }</code></pre>
@@ -682,7 +682,7 @@ $icons: "check", "user", "home","cancel", "share";
   .ico{
     &[class*="ico-#{($icon)}"]{
       &:before{
-        @include icon-background('#{($path-icons)} + #{($prefix-icon)} + #{($icon)} + #{($extension-icon)}');
+        @include icon-background('#{($path-icons)}#{($prefix-icon)}#{($icon)}#{($extension-icon)}');
       }
     }
   }

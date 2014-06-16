@@ -19,7 +19,7 @@ $scenes: "The_beach", "The_hotel", "Sunset","Safari", "Mountain";
 @each $scene in $scenes {
   .gallery-item{
     &[class*="gallery-#{($scene)}"]{
-        @include full-background(#ccc, '#{($path-gallery-2014)} + #{($prefix-gallery)} + #{($scene)} + #{($extension-image)}');
+        @include full-background(#ccc, '#{($path-gallery-2014)}#{($prefix-gallery)}#{($scene)}#{($extension-image)}');
     }
   }
 }

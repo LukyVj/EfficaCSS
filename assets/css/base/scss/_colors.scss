@@ -1,0 +1,45 @@
+
+/*Colors : Here you define your color palette & colorscheme, we defined some fresh colors for you
+------------------------------------------------------------------------------------------------------*/
+
+
+$green: #83BC49;
+
+// $purple: #3A3F5C;
+$purple: #663399;
+$text-purple: #4B5184;
+$dark-purple: #363953;
+$light-purple: #C8C9DA;
+
+$blue: #1393D5;
+
+$white: #F3F3F5;
+$grey: #EFF0F2;
+$light-grey: #FAFBFB;
+$dark-grey: #9295A4;
+
+$yellow: #EEBD2B;
+
+/* Shortcuts
+--------------------------------------------------------------------------------------------------*/
+$g: $green;
+
+$p: $purple;
+$dp: $dark-purple;
+$lp: $light-purple;
+$tp: $text-purple;
+
+$b: $blue;
+
+$w: $white;
+$ge: $grey;
+$lg: $light-grey;
+$dg: $dark-grey;
+
+$y: $yellow;
+
+/* Theme
+--------------------------------------------------------------------------------------------------*/
+$p:$b;
+$color-theme: $p;
+$ct: $color-theme;

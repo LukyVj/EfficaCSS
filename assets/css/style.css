@@ -154,48 +154,45 @@ table {
 td, th {
   padding: 0; }
 
-/* ==========================================================================
-OVCSS Settings library :
-========================================================================== */
+/* OVCSS Settings library :
+------------------------------------------------------------------------------------------------------*/
 /*
- Variables functions :
-*/
+ OVCSS Variables :
+------------------------------------------------------------------------------------------------------*/
 /* font var
------------------------------------------------------*/
-/*
-  Mixins EfficaCSS.
-*/
+-------------------------------------------------------------------*/
+/* Set of mixins
+------------------------------------------------------------------------------------------------------*/
 /* Start mixins, reset ect
 -------------------------------------------------------------------*/
 /* Font settings
 -------------------------------------------------------------------*/
 /* Font-face
-------------------------------------------*/
+-------------------------------------------------------------------*/
 /* regular font management
-----------------------------------------------------------------------*/
+-------------------------------------------------------------------*/
 /* Helper : Border-radius
 -------------------------------------------------------------------*/
 /* borders
------------------------------------------------------------------*/
+-------------------------------------------------------------------*/
 /* single element
------------------------------------------------------------------*/
+-------------------------------------------------------------------*/
 /* Square
-------------------------------------------------------------------*/
+-------------------------------------------------------------------*/
 /* Backgrounds
-------------------------------------------------------------------*/
+-------------------------------------------------------------------*/
 /* Shadow effects
 -------------------------------------------------------------------*/
 /* Inset outset blocks
---------------------------------------------------------------------*/
+-------------------------------------------------------------------*/
 /* Text-shadows [ b = bottom, t = top, r = right, l = left ]
----------------------------------------------------------------------*/
+-------------------------------------------------------------------*/
 /* Single elements
---------------------------------------------------------------------*/
+-------------------------------------------------------------------*/
 /* Grid
----------------------------------------------------------------*/
-/* ==========================================================================
- OVCSS Typographic settings :
-========================================================================== */
+-------------------------------------------------------------------*/
+/* OVCSS Typographic settings :
+------------------------------------------------------------------------------------------------------*/
 @font-face {
   font-family: ProximaNova-Regular;
   src: url("../fonts/ProximaNova/ProximaNova-Regular.eot?") format("eot"), url("../fonts/ProximaNova/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova/ProximaNova-Regular.svg#ProximaNova-Regular") format("svg"), url("../fonts/ProximaNova/ProximaNova-Regular.ttf") format("truetype"); }
@@ -1702,16 +1699,14 @@ OVCSS Settings library :
 .fa-bomb:before {
   content: "\f1e2"; }
 
-/* ====================================================================================================
-Colors : Here you define your color palette & colorscheme, we defined some fresh colors for you
-======================================================================================================*/
+/*Colors : Here you define your color palette & colorscheme, we defined some fresh colors for you
+------------------------------------------------------------------------------------------------------*/
 /* Shortcuts
 --------------------------------------------------------------------------------------------------*/
 /* Theme
 --------------------------------------------------------------------------------------------------*/
-/* ====================================================================================================
-Buttons : Here is the main buttons stylesheet
-======================================================================================================*/
+/*Buttons : Here is the main buttons stylesheet
+------------------------------------------------------------------------------------------------------*/
 .btn {
   border: 2px solid #f3f3f5; }
   .btn:hover {
@@ -1724,10 +1719,9 @@ Buttons : Here is the main buttons stylesheet
     padding: .6em 1em;
     border-bottom: 2px solid #5d8732; }
 
-/* ====================================================================================================
-Classes : This library could be named helpers.css, here you will find all technical classes
+/*Classes : This library could be named helpers.css, here you will find all technical classes
 (ex : .hide, .clearfix, .fix )
-======================================================================================================*/
+------------------------------------------------------------------------------------------------------*/
 .clearfix:before,
 .clearfix:after {
   content: "";
@@ -1735,15 +1729,14 @@ Classes : This library could be named helpers.css, here you will find all techni
   clear: both; }
 
 /* incetions
---------------------------------------------------------------------------*/
+------------------------------------------------*/
 section.inset, .container .col-md-12 section article > section {
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.4); }
   section.inset:hover, .container .col-md-12 section article > section:hover {
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.4); }
 
- /* ====================================================================================================
-Basic form stylesheet : Here you define the basic style of your forms
-======================================================================================================*/
+/* Basic form stylesheet : Here you define the basic style of your forms
+------------------------------------------------------------------------------------------------------*/
 form input {
   outline: none; }
   form input::-webkit-input-placeholder {
@@ -1755,9 +1748,8 @@ form input {
   form input:-ms-input-placeholder {
     color: black; }
 
-/* ====================================================================================================
-Animations : Define CSS3 keyframes animations
-======================================================================================================*/
+/*Animations : Define CSS3 keyframes animations
+------------------------------------------------------------------------------------------------------*/
 @-webkit-keyframes rollShadow {
   0% {
     text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; }
@@ -1839,9 +1831,8 @@ Animations : Define CSS3 keyframes animations
 
   100% {
     text-shadow: -0.035em 0 0 #0f73a6, -0.065em 0 0 #0b5277; } }
-/* ====================================================================================================
-Base : This stylesheet will be your base, you will define the main lines of your project stylesheet.
-======================================================================================================*/
+/* Base : This stylesheet will be your base, you will define the main lines of your project stylesheet.
+------------------------------------------------------------------------------------------------------*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1867,7 +1858,6 @@ strong {
   font-weight: bold; }
 
  /*
-
   If it’s a hack, it goes in shame.css.
   Document all hacks fully:
   What part of the codebase does it relate to?
@@ -1877,8 +1867,7 @@ strong {
   Do not blame the developer; if they explained why they had to do it then their reasons are probably (hopefully) valid.
   Try and clean shame.css up when you have some down time.
   Even better, get a tech-debt story in which you can dedicate actual sprint time to it.
-
-*/
+------------------------------------------------------------------------------------------------------*/
 .table-responsive {
   padding: 0 !important; }
   .table-responsive tr td {
@@ -1899,7 +1888,7 @@ strong {
     color: #f3f3f5; }
 
 /* Page header
----------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------------*/
 .page-header {
   border: none; }
 
@@ -1907,7 +1896,7 @@ strong {
   width: 7.333333%; }
 
 /* Col-md-4
---------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------------*/
 .col-md-4 {
   width: 30%; }
   @media all and (max-width: 65em) {
@@ -1915,7 +1904,7 @@ strong {
       width: 100%; } }
 
 /* Navbar
-------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------------*/
 .navbar {
   background: transparent;
   border: 0; }
@@ -1937,7 +1926,7 @@ strong {
           border: 1px solid #eebd2b; }
 
 /* Nav Pills
---------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------------*/
 .nav-pills li {
   margin-right: .4em; }
   .nav-pills li a {
@@ -1953,7 +1942,7 @@ strong {
     color: #fff; }
 
 /* Tables
---------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------------*/
 .table > thead > tr > td.info,
 .table > tbody > tr > td.info,
 .table > tfoot > tr > td.info,
@@ -1982,7 +1971,7 @@ strong {
   border-top: 1px solid #0b5277; }
 
 /* contextual class
-----------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------------*/
 .text-danger {
   color: #eebd2b; }
 
@@ -2083,43 +2072,9 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .tex .hljs-formula {
   background: #073642; }
 
-html[data-debug="true"] #debugWindow {
-  opacity: 1; }
-html[data-debug="true"] body[data-debug-grid*="true"]:after {
-  content: '';
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(180deg, transparent 0px, rgba(0, 0, 0, 0.5) 1px, transparent 0px), linear-gradient(90deg, transparent 0px, rgba(0, 0, 0, 0.5) 1px, transparent 0px);
-  background-size: 5.6em 5.6em, 5.6em 5.6em;
-  background-color: transparent; }
-html[data-debug="true"] body[data-debug-animation*="true"] * {
-  -webkit-animation: none !important;
-  -moz-animation: none !important;
-  animation: none !important;
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  transition: none !important; }
-
-#debugWindow {
-  opacity: .4;
-  position: fixed;
-  z-index: 999999999;
-  top: 0;
-  left: 0;
-  padding: .2em 1em;
-  border: 2px solid #fff;
-  text-shadow: 0 1px 0 #000; }
-  #debugWindow:hover {
-    opacity: 1; }
-  #debugWindow span {
-    cursor: pointer;
-    padding: .3em;
-    margin: auto .2em; }
-
+/*  Debug file, Just add your debug rules on this file, and activate it by setting the data-debug=true
+    attribute to your HTML document
+------------------------------------------------------------------------------------------------------*/
 /* ==========================================================================
  Main style of your project  :
  ========================================================================== */

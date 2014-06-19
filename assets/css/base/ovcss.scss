@@ -16,9 +16,9 @@ $license-url:'http://lucasbonomi.com/MIT';
  Base importations :
  ========================================================================== */
 
-  @import "base/_normalize.scss";  // Normalize.css
+  @import "scss/_normalize.scss";  // Normalize.css
   @import "bourbon/_bourbon.scss"; // Bourbon libraries
-  @import "base/_settings.scss";   // OVCSS Lib
+  @import "scss/_settings.scss";   // OVCSS Lib
 
 
 
